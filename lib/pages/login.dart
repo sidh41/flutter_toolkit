@@ -90,10 +90,19 @@ class ImageColumn extends StatelessWidget {
   }
 }
 
-class LoginForm extends StatelessWidget {
+class LoginForm extends StatefulWidget {
   final Function toggleForm;
 
   LoginForm(this.toggleForm);
+
+  @override
+  _LoginFormState createState() => _LoginFormState();
+}
+
+class _LoginFormState extends State<LoginForm> {
+  final _mobileNumberController = TextEditingController();
+  bool _isPrimaryButtonEnabled = false;
+  bool isValidMobileNumber = false;
 
   @override
   Widget build(BuildContext context) {
@@ -127,7 +136,7 @@ class LoginForm extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30.0),
               border: Border.all(
-                color: lightColor,
+                color: mediumColor,
               ),
             ),
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
@@ -137,7 +146,7 @@ class LoginForm extends StatelessWidget {
                   width: 40.0,
                   decoration: const BoxDecoration(
                     border: Border(
-                      right: BorderSide(color: lightColor, width: 1.0),
+                      right: BorderSide(color: mediumColor, width: 1.0),
                     ),
                   ),
                   child: SizedBox(
@@ -171,6 +180,7 @@ class LoginForm extends StatelessWidget {
                     child: Align(
                       alignment: Alignment.center,
                       child: TextFormField(
+                        controller: _mobileNumberController,
                         keyboardType: TextInputType.number,
                         style: const TextStyle(
                           fontWeight: normalFontWeight,
@@ -187,6 +197,27 @@ class LoginForm extends StatelessWidget {
                             horizontal: 8.0,
                           ),
                         ),
+                        onChanged: (value) {
+                          // Check if the mobile number is valid.
+                          bool isValidMobileNumber = value.length == 10 &&
+                              RegExp(r'^[0-9]+$').hasMatch(value);
+
+                          // Enable the primary button if the mobile number is valid.
+                          setState(() {
+                            _isPrimaryButtonEnabled = isValidMobileNumber;
+                            this.isValidMobileNumber = isValidMobileNumber;
+
+                            // Display an error message if the mobile number is invalid.
+                            // if (!isValidMobileNumber) {
+                            //   // Display an error message here.
+                            //   ScaffoldMessenger.of(context).showSnackBar(
+                            //     SnackBar(
+                            //       content: Text('Invalid mobile number'),
+                            //     ),
+                            //   );
+                            // }
+                          });
+                        },
                       ),
                     ),
                   ),
@@ -198,11 +229,15 @@ class LoginForm extends StatelessWidget {
           Container(
             height: buttonHeight,
             width: double.infinity,
-            child: PrimaryButton(
-              text: 'Log in',
-              onPressed: () {
-                toggleForm();
-              },
+            child: AbsorbPointer(
+              absorbing: !isValidMobileNumber,
+              child: PrimaryButton(
+                text: 'Log in',
+                onPressed: () {
+                  widget.toggleForm();
+                },
+                isEnabled: isValidMobileNumber,
+              ),
             ),
           ),
         ],

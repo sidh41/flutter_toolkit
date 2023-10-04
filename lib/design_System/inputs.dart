@@ -69,6 +69,6 @@ final defaultPinTheme = PinTheme(
   ),
   decoration: BoxDecoration(
     borderRadius: BorderRadius.circular(50),
-    border: Border.all(color: lightColor),
+    border: Border.all(color: mediumColor),
   ),
 );
