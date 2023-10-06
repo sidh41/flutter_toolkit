@@ -1,7 +1,7 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
-import '../design_System/constants.dart';
+// import '../Design System/responsive.dart';
+import 'package:flutter_bootstrap/flutter_bootstrap.dart';
+import 'package:flutter_toolkit/design_System/constants.dart';
 import '../design_System/responsive.dart';
 
 class ExamplePage extends StatelessWidget {
@@ -9,7 +9,7 @@ class ExamplePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Fixed Grid Example'),
+        title: const Text('Responsive GridView Example'),
       ),
       body: const ExamplePageLayout(),
     );
@@ -22,76 +22,99 @@ class ExamplePageLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scrollable(viewportBuilder: (context, viewportConstraints) {
+      bootstrapGridParameters(gutterSize: defaultGutterSize);
       return SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+        child: BootstrapContainer(
+          fluid: true,
+          padding: const EdgeInsets.fromLTRB(8, 16, 8, 16),
           children: [
-            Container(
-              color: Colors.blue,
-              padding: EdgeInsets.all(mdVerticalSpacing),
-              child: Text(
-                'Hi, this is ROW',
-                style: TextStyle(fontSize: lgFontSize, color: whiteColor),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: GridView.count(
-                crossAxisCount: Responsive.isScreenXL(context)
-                    ? 3
-                    : Responsive.isScreenLG(context)
-                        ? 3
-                        : Responsive.isScreenMD(context)
-                            ? 3
-                            : 1,
-                mainAxisSpacing: 10.0,
-                crossAxisSpacing: 10.0,
-                shrinkWrap: true,
-                children: [
-                  Container(
-                    color: Colors.blue,
-                    child: Center(
-                      child: Text('1st Item'),
-                    ),
-                  ),
-                  Container(
-                    color: Colors.green,
+            BootstrapRow(
+              children: [
+                BootstrapCol(
+                  sizes: 'col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3',
+                  child: const CustomColumn(),
+                ),
+                BootstrapCol(
+                  sizes: 'col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3',
+                  child: const CustomColumn(),
+                ),
+                BootstrapCol(
+                  sizes: 'col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3',
+                  child: const CustomColumn(),
+                ),
+                BootstrapCol(
+                  sizes: 'col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3',
+                  child: const CustomColumn(),
+                ),
+                BootstrapCol(
+                    sizes: 'col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3',
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Checkbox(
-                          value: false,
-                          onChanged: (value) {},
+                        const Text(
+                          'Name',
+                          style: inputLabel,
                         ),
-                        Text('2nd Item'),
+                        const SizedBox(height: xsVerticalSpacing),
+                        TextFormField(
+                          style: const TextStyle(
+                              color: darkColor,
+                              fontSize: mdFontSize,
+                              fontWeight: normalFontWeight),
+                          decoration: textFormFieldDecoration.copyWith(
+                              hintText: 'Enter your Name'),
+                        ),
+                        const SizedBox(height: mdVerticalSpacing),
                       ],
-                    ),
-                  ),
-                  Column(
-                    children: [
-                      Container(
-                        color: Colors.red,
-                        child: Center(
-                          child: Text('3rd Item'),
+                    )),
+                BootstrapCol(
+                    sizes: 'col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3',
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          'Age',
+                          style: inputLabel,
                         ),
-                      ),
-                      Row(
-                        children: [
-                          Radio(value: true, groupValue: null, onChanged: null),
-                          Text('Radio Button'),
-                        ],
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            Text(
-              'Hi, again this is ROW',
-              style: TextStyle(fontSize: lgFontSize, color: whiteColor),
+                        const SizedBox(height: xsVerticalSpacing),
+                        TextFormField(
+                          style: const TextStyle(
+                              color: darkColor,
+                              fontSize: mdFontSize,
+                              fontWeight: normalFontWeight),
+                          decoration: textFormFieldDecoration.copyWith(
+                              hintText: 'Enter your Age'),
+                        ),
+                      ],
+                    )),
+              ],
             ),
           ],
         ),
       );
     });
+  }
+}
+
+class CustomColumn extends StatelessWidget {
+  const CustomColumn({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      alignment: Alignment.center,
+      // padding: EdgeInsets.all(16),
+      margin: EdgeInsets.fromLTRB(0, 0, 0, 16),
+      decoration: const BoxDecoration(
+        color: primaryColor,
+        borderRadius: BorderRadius.all(Radius.circular(16)),
+      ),
+      height: 200,
+      child: const Text(
+        "Column 1",
+        textAlign: TextAlign.center,
+        style: TextStyle(color: Colors.white),
+      ),
+    );
   }
 }

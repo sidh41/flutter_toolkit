@@ -44,7 +44,7 @@ const double smHorizontalSpacing = 8.0;
 const double mdHorizontalSpacing = 16.0;
 const double lgHorizontalSpacing = 24.0;
 
-const double gutterSize = 16.0;
+const double defaultGutterSize = 16.0;
 
 // Height
 const double textFormFieldHeight = 48.0;
