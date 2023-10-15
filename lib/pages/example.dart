@@ -1,7 +1,10 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 // import '../Design System/responsive.dart';
 import 'package:flutter_bootstrap/flutter_bootstrap.dart';
 import 'package:flutter_toolkit/design_System/constants.dart';
+import '../design_System/inputs.dart';
 import '../design_System/responsive.dart';
 
 class ExamplePage extends StatelessWidget {
@@ -9,7 +12,7 @@ class ExamplePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Responsive GridView Example'),
+        title: const Text('Examples'),
       ),
       body: const ExamplePageLayout(),
     );
@@ -22,7 +25,7 @@ class ExamplePageLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scrollable(viewportBuilder: (context, viewportConstraints) {
-      bootstrapGridParameters(gutterSize: defaultGutterSize);
+      bootstrapGridParameters(gutterSize: 16.0);
       return SingleChildScrollView(
         child: BootstrapContainer(
           fluid: true,
@@ -31,49 +34,118 @@ class ExamplePageLayout extends StatelessWidget {
             BootstrapRow(
               children: [
                 BootstrapCol(
-                  sizes: 'col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3',
-                  child: const CustomColumn(),
-                ),
-                BootstrapCol(
-                  sizes: 'col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3',
-                  child: const CustomColumn(),
-                ),
-                BootstrapCol(
-                  sizes: 'col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3',
-                  child: const CustomColumn(),
-                ),
-                BootstrapCol(
-                  sizes: 'col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3',
-                  child: const CustomColumn(),
-                ),
-                BootstrapCol(
-                    sizes: 'col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3',
+                    sizes: 'col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3',
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const Text(
-                          'Name',
+                          'Custom TextFormField',
                           style: inputLabel,
                         ),
                         const SizedBox(height: xsVerticalSpacing),
-                        TextFormField(
-                          style: const TextStyle(
-                              color: darkColor,
-                              fontSize: mdFontSize,
-                              fontWeight: normalFontWeight),
-                          decoration: textFormFieldDecoration.copyWith(
-                              hintText: 'Enter your Name'),
+                        CustomTextFormField(
+                          hintText: 'Placeholder',
                         ),
-                        const SizedBox(height: mdVerticalSpacing),
+                        const SizedBox(height: lgVerticalSpacing),
                       ],
                     )),
                 BootstrapCol(
-                    sizes: 'col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3',
+                    sizes: 'col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3',
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const Text(
-                          'Age',
+                          'Custom TextFormField + Icon',
+                          style: inputLabel,
+                        ),
+                        const SizedBox(height: xsVerticalSpacing),
+                        CustomTextFormField(
+                          hintText: 'Placeholder',
+                          prefixIcon: Icon(Icons.person, color: mediumColor),
+                        ),
+                        const SizedBox(height: lgVerticalSpacing),
+                      ],
+                    )),
+                BootstrapCol(
+                    sizes: 'col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3',
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          'Custom TextFormField + Icons',
+                          style: inputLabel,
+                        ),
+                        const SizedBox(height: xsVerticalSpacing),
+                        CustomTextFormField(
+                          hintText: 'Placeholder',
+                          prefixIcon: Icon(Icons.person, color: mediumColor),
+                          suffixIcon: Icon(Icons.add, color: mediumColor),
+                        ),
+                        const SizedBox(height: lgVerticalSpacing),
+                      ],
+                    )),
+                BootstrapCol(
+                    sizes: 'col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3',
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          'Custom TextFormField + Icons + focused',
+                          style: inputLabel,
+                        ),
+                        const SizedBox(height: xsVerticalSpacing),
+                        CustomTextFormField(
+                          hintText: 'Placeholder',
+                          prefixIcon: Icon(Icons.person),
+                          suffixIcon: Icon(Icons.add),
+                        ),
+                        const SizedBox(height: lgVerticalSpacing),
+                      ],
+                    )),
+                BootstrapCol(
+                    sizes: 'col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3',
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          'Custom TextFormField + Password',
+                          style: inputLabel,
+                        ),
+                        const SizedBox(height: xsVerticalSpacing),
+                        CustomTextFormField(
+                          hintText: 'Password',
+                          obscureText: true,
+                          showToggleIcon: false,
+                        ),
+                        const SizedBox(height: lgVerticalSpacing),
+                      ],
+                    )),
+                BootstrapCol(
+                    sizes: 'col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3',
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          'Custom TextFormField + Password View',
+                          style: inputLabel,
+                        ),
+                        const SizedBox(height: xsVerticalSpacing),
+                        CustomTextFormField(
+                          hintText: 'Password',
+                          obscureText: true,
+                          showToggleIcon: true,
+                          suffixIconSize: mdFontSize,
+                        ),
+                        const SizedBox(height: lgVerticalSpacing),
+                      ],
+                    )),
+                BootstrapCol(
+                    sizes: 'col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3',
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          'TextFormField Custom Decoration',
                           style: inputLabel,
                         ),
                         const SizedBox(height: xsVerticalSpacing),
@@ -83,7 +155,12 @@ class ExamplePageLayout extends StatelessWidget {
                               fontSize: mdFontSize,
                               fontWeight: normalFontWeight),
                           decoration: textFormFieldDecoration.copyWith(
-                              hintText: 'Enter your Age'),
+                              hintText: 'Placeholder',
+                              prefixIcon: Icon(
+                                Icons.supervised_user_circle,
+                                color: mediumColor,
+                              ),
+                              suffixIcon: Icon(Icons.pending_actions)),
                         ),
                       ],
                     )),
@@ -93,28 +170,5 @@ class ExamplePageLayout extends StatelessWidget {
         ),
       );
     });
-  }
-}
-
-class CustomColumn extends StatelessWidget {
-  const CustomColumn({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.center,
-      // padding: EdgeInsets.all(16),
-      margin: EdgeInsets.fromLTRB(0, 0, 0, 16),
-      decoration: const BoxDecoration(
-        color: primaryColor,
-        borderRadius: BorderRadius.all(Radius.circular(16)),
-      ),
-      height: 200,
-      child: const Text(
-        "Column 1",
-        textAlign: TextAlign.center,
-        style: TextStyle(color: Colors.white),
-      ),
-    );
   }
 }

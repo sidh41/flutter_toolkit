@@ -6,9 +6,9 @@ import 'pages/example.dart';
 
 class Routes {
   static final routes = {
-    '/': (context) => LoginPage(),
+    '/': (context) => ExamplePage(),
     '/login': (context) => LoginPage(),
     '/dashboard': (context) => DashboardPage(),
-    '/test': (context) => ExamplePage(),
+    '/example': (context) => ExamplePage(),
   };
 }

@@ -55,15 +55,15 @@ const double buttonHeight = 48.0;
 const InputDecoration textFormFieldDecoration = InputDecoration(
   enabledBorder: OutlineInputBorder(
     borderSide: BorderSide(color: mediumColor),
-    borderRadius: BorderRadius.all(Radius.circular(50.0)),
+    borderRadius: BorderRadius.all(Radius.circular(8.0)),
   ),
   focusedBorder: OutlineInputBorder(
-    borderSide: BorderSide(color: darkColor),
-    borderRadius: BorderRadius.all(Radius.circular(50.0)),
+    borderSide: BorderSide(color: primaryColor),
+    borderRadius: BorderRadius.all(Radius.circular(8.0)),
   ),
   errorBorder: OutlineInputBorder(
     borderSide: BorderSide(color: Colors.red),
-    borderRadius: BorderRadius.all(Radius.circular(50.0)),
+    borderRadius: BorderRadius.all(Radius.circular(8.0)),
   ),
   contentPadding: EdgeInsets.all(16.0),
   labelStyle: TextStyle(fontSize: mdFontSize, color: darkColor),
