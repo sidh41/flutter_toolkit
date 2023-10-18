@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 // import '../Design System/responsive.dart';
 import 'package:flutter_bootstrap/flutter_bootstrap.dart';
+import 'package:flutter_toolkit/design_System/buttons.dart';
 import 'package:flutter_toolkit/design_System/constants.dart';
 import '../design_System/inputs.dart';
 import '../design_System/responsive.dart';
@@ -33,6 +34,106 @@ class ExamplePageLayout extends StatelessWidget {
           children: [
             BootstrapRow(
               children: [
+                BootstrapCol(
+                  sizes: 'col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3',
+                  child: Row(
+                    children: [
+                      Text(
+                        'h1 Heading',
+                        style: h1Style,
+                      ),
+                      const SizedBox(height: lgVerticalSpacing),
+                    ],
+                  ),
+                ),
+                BootstrapCol(
+                  sizes: 'col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3',
+                  child: Row(
+                    children: [
+                      Text(
+                        'h2 Heading',
+                        style: h2Style,
+                      ),
+                      const SizedBox(height: lgVerticalSpacing),
+                    ],
+                  ),
+                ),
+                BootstrapCol(
+                  sizes: 'col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3',
+                  child: Row(
+                    children: [
+                      Text(
+                        'h3 Heading',
+                        style: h3Style,
+                      ),
+                      const SizedBox(height: lgVerticalSpacing),
+                    ],
+                  ),
+                ),
+                BootstrapCol(
+                  sizes: 'col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3',
+                  child: Row(
+                    children: [
+                      Text(
+                        'h4 Heading',
+                        style: h4Style,
+                      ),
+                      const SizedBox(height: lgVerticalSpacing),
+                    ],
+                  ),
+                ),
+                BootstrapCol(
+                  sizes: 'col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3',
+                  child: Row(
+                    children: [
+                      Text(
+                        'h5 Heading',
+                        style: h5Style,
+                      ),
+                      const SizedBox(height: lgVerticalSpacing),
+                    ],
+                  ),
+                ),
+                BootstrapCol(
+                  sizes: 'col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3',
+                  child: Row(
+                    children: [
+                      Text(
+                        'h6 Heading',
+                        style: h6Style,
+                      ),
+                      const SizedBox(height: lgVerticalSpacing),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Column(
+                  children: [
+                    const SizedBox(height: lgVerticalSpacing),
+                  ],
+                ),
+              ],
+            ),
+            BootstrapRow(
+              children: [
+                BootstrapCol(
+                  sizes: 'col-12',
+                  child: Column(
+                    children: [
+                      Align(
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          'TextFormField',
+                          style: h2Style,
+                        ),
+                      ),
+                      const SizedBox(height: xsVerticalSpacing),
+                    ],
+                  ),
+                ),
                 BootstrapCol(
                     sizes: 'col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3',
                     child: Column(
@@ -162,6 +263,404 @@ class ExamplePageLayout extends StatelessWidget {
                               ),
                               suffixIcon: Icon(Icons.pending_actions)),
                         ),
+                        const SizedBox(height: lgVerticalSpacing),
+                      ],
+                    )),
+              ],
+            ),
+            BootstrapRow(
+              children: [
+                BootstrapCol(
+                  sizes: 'col-12',
+                  child: Column(
+                    children: [
+                      Align(
+                        alignment: Alignment.topLeft,
+                        child: Column(
+                          children: [
+                            Text(
+                              'Buttons (Enabled)',
+                              style: h2Style,
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(height: smVerticalSpacing),
+                    ],
+                  ),
+                ),
+                BootstrapCol(
+                    sizes: 'col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3',
+                    child: Column(
+                      children: [
+                        Container(
+                            height: buttonHeight,
+                            width: double.infinity,
+                            child: PrimaryButton(
+                                text: 'Primary', onPressed: () {})),
+                        const SizedBox(height: lgVerticalSpacing),
+                      ],
+                    )),
+                BootstrapCol(
+                    sizes: 'col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3',
+                    child: Column(
+                      children: [
+                        Container(
+                            height: buttonHeight,
+                            width: double.infinity,
+                            child: SecondaryButton(
+                                text: 'Secondary', onPressed: () {})),
+                        const SizedBox(height: lgVerticalSpacing),
+                      ],
+                    )),
+                BootstrapCol(
+                    sizes: 'col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3',
+                    child: Column(
+                      children: [
+                        Container(
+                            height: buttonHeight,
+                            width: double.infinity,
+                            child: PrimaryButton(
+                              text: 'Edit',
+                              onPressed: () {},
+                              icon: Icon(Icons.edit),
+                            )),
+                        const SizedBox(height: lgVerticalSpacing),
+                      ],
+                    )),
+                BootstrapCol(
+                    sizes: 'col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3',
+                    child: Column(
+                      children: [
+                        Container(
+                            height: buttonHeight,
+                            width: double.infinity,
+                            child: SecondaryButton(
+                              text: 'Delete',
+                              onPressed: () {},
+                              icon: Icon(Icons.delete),
+                            )),
+                        const SizedBox(height: lgVerticalSpacing),
+                      ],
+                    )),
+                BootstrapCol(
+                    sizes: 'col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3',
+                    child: Column(
+                      children: [
+                        Container(
+                            height: buttonHeight,
+                            width: double.infinity,
+                            child: PrimaryButton(
+                              text: 'Edit',
+                              onPressed: () {},
+                              icon: Icon(Icons.edit),
+                              iconPosition: IconPosition.right,
+                            )),
+                        const SizedBox(height: lgVerticalSpacing),
+                      ],
+                    )),
+                BootstrapCol(
+                    sizes: 'col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3',
+                    child: Column(
+                      children: [
+                        Container(
+                            height: buttonHeight,
+                            width: double.infinity,
+                            child: SecondaryButton(
+                              text: 'Delete',
+                              onPressed: () {},
+                              icon: Icon(Icons.delete),
+                              iconPosition: IconPosition.right,
+                            )),
+                        const SizedBox(height: lgVerticalSpacing),
+                      ],
+                    )),
+              ],
+            ),
+            BootstrapRow(
+              children: [
+                BootstrapCol(
+                  sizes: 'col-12',
+                  child: Column(
+                    children: [
+                      Align(
+                        alignment: Alignment.topLeft,
+                        child: Column(
+                          children: [
+                            Text(
+                              'Buttons (Disabled)',
+                              style: h2Style,
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(height: smVerticalSpacing),
+                    ],
+                  ),
+                ),
+                BootstrapCol(
+                    sizes: 'col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3',
+                    child: Column(
+                      children: [
+                        Container(
+                            height: buttonHeight,
+                            width: double.infinity,
+                            child: PrimaryButton(
+                              text: 'Primary',
+                              onPressed: () {},
+                              isEnabled: false,
+                            )),
+                        const SizedBox(height: lgVerticalSpacing),
+                      ],
+                    )),
+                BootstrapCol(
+                    sizes: 'col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3',
+                    child: Column(
+                      children: [
+                        Container(
+                            height: buttonHeight,
+                            width: double.infinity,
+                            child: SecondaryButton(
+                              text: 'Secondary',
+                              onPressed: () {},
+                              isEnabled: false,
+                            )),
+                        const SizedBox(height: lgVerticalSpacing),
+                      ],
+                    )),
+                BootstrapCol(
+                    sizes: 'col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3',
+                    child: Column(
+                      children: [
+                        Container(
+                            height: buttonHeight,
+                            width: double.infinity,
+                            child: PrimaryButton(
+                              text: 'Edit',
+                              onPressed: () {},
+                              icon: Icon(Icons.edit),
+                              isEnabled: false,
+                            )),
+                        const SizedBox(height: lgVerticalSpacing),
+                      ],
+                    )),
+                BootstrapCol(
+                    sizes: 'col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3',
+                    child: Column(
+                      children: [
+                        Container(
+                            height: buttonHeight,
+                            width: double.infinity,
+                            child: SecondaryButton(
+                              text: 'Delete',
+                              onPressed: () {},
+                              icon: Icon(Icons.delete),
+                              isEnabled: false,
+                            )),
+                        const SizedBox(height: lgVerticalSpacing),
+                      ],
+                    )),
+                BootstrapCol(
+                    sizes: 'col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3',
+                    child: Column(
+                      children: [
+                        Container(
+                            height: buttonHeight,
+                            width: double.infinity,
+                            child: PrimaryButton(
+                              text: 'Edit',
+                              onPressed: () {},
+                              icon: Icon(Icons.edit),
+                              iconPosition: IconPosition.right,
+                              isEnabled: false,
+                            )),
+                        const SizedBox(height: lgVerticalSpacing),
+                      ],
+                    )),
+                BootstrapCol(
+                    sizes: 'col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3',
+                    child: Column(
+                      children: [
+                        Container(
+                            height: buttonHeight,
+                            width: double.infinity,
+                            child: SecondaryButton(
+                              text: 'Delete',
+                              onPressed: () {},
+                              icon: Icon(Icons.delete),
+                              iconPosition: IconPosition.right,
+                              isEnabled: false,
+                            )),
+                        const SizedBox(height: lgVerticalSpacing),
+                      ],
+                    )),
+              ],
+            ),
+            BootstrapRow(
+              children: [
+                BootstrapCol(
+                  sizes: 'col-12',
+                  child: Column(
+                    children: [
+                      Align(
+                        alignment: Alignment.topLeft,
+                        child: Column(
+                          children: [
+                            Text(
+                              'Floating Action Button (Enabled)',
+                              style: h2Style,
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(height: smVerticalSpacing),
+                    ],
+                  ),
+                ),
+                BootstrapCol(
+                    sizes: 'col-4 col-sm-6 col-md-4 col-lg-4 col-xl-3',
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          width: buttonHeight,
+                          height: buttonHeight,
+                          child: FittedBox(
+                            child: PrimaryFloatingActionButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.add,
+                                size: xlFontSize,
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: lgVerticalSpacing),
+                      ],
+                    )),
+                BootstrapCol(
+                    sizes: 'col-4 col-sm-6 col-md-4 col-lg-4 col-xl-3',
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          width: 60.0,
+                          height: 60.0,
+                          child: FittedBox(
+                            child: PrimaryFloatingActionButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.add,
+                                size: xlFontSize,
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: lgVerticalSpacing),
+                      ],
+                    )),
+                BootstrapCol(
+                    sizes: 'col-4 col-sm-6 col-md-4 col-lg-4 col-xl-3',
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          width: 75.0,
+                          height: 75.0,
+                          child: FittedBox(
+                            child: PrimaryFloatingActionButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.add,
+                                size: xlFontSize,
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: lgVerticalSpacing),
+                      ],
+                    )),
+              ],
+            ),
+            BootstrapRow(
+              children: [
+                BootstrapCol(
+                  sizes: 'col-12',
+                  child: Column(
+                    children: [
+                      Align(
+                        alignment: Alignment.topLeft,
+                        child: Column(
+                          children: [
+                            Text(
+                              'Floating Action Button (Disabled)',
+                              style: h2Style,
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(height: smVerticalSpacing),
+                    ],
+                  ),
+                ),
+                BootstrapCol(
+                    sizes: 'col-4 col-sm-6 col-md-4 col-lg-4 col-xl-3',
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          width: buttonHeight,
+                          height: buttonHeight,
+                          child: FittedBox(
+                            child: PrimaryFloatingActionButton(
+                              isEnabled: false,
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.add,
+                                size: xlFontSize,
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: lgVerticalSpacing),
+                      ],
+                    )),
+                BootstrapCol(
+                    sizes: 'col-4 col-sm-6 col-md-4 col-lg-4 col-xl-3',
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          width: 60.0,
+                          height: 60.0,
+                          child: FittedBox(
+                            child: PrimaryFloatingActionButton(
+                              isEnabled: false,
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.add,
+                                size: xlFontSize,
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: lgVerticalSpacing),
+                      ],
+                    )),
+                BootstrapCol(
+                    sizes: 'col-4 col-sm-6 col-md-4 col-lg-4 col-xl-3',
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          width: 75.0,
+                          height: 75.0,
+                          child: FittedBox(
+                            child: PrimaryFloatingActionButton(
+                              isEnabled: false,
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.add,
+                                size: xlFontSize,
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: lgVerticalSpacing),
                       ],
                     )),
               ],
