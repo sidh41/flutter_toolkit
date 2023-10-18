@@ -15,6 +15,21 @@ const Color dangerColor = Color(0xFFFF4949);
 const TextStyle h1Style = TextStyle(
     fontSize: xlFontSize, fontWeight: boldFontWeight, color: darkColor);
 
+const TextStyle h2Style = TextStyle(
+    fontSize: lgFontSize, fontWeight: boldFontWeight, color: darkColor);
+
+const TextStyle h3Style = TextStyle(
+    fontSize: mdFontSize, fontWeight: boldFontWeight, color: darkColor);
+
+const TextStyle h4Style = TextStyle(
+    fontSize: smFontSize, fontWeight: boldFontWeight, color: darkColor);
+
+const TextStyle h5Style = TextStyle(
+    fontSize: xsFontSize, fontWeight: boldFontWeight, color: darkColor);
+
+const TextStyle h6Style = TextStyle(
+    fontSize: xxsFontSize, fontWeight: boldFontWeight, color: darkColor);
+
 const TextStyle inputLabel = TextStyle(
     fontSize: mdFontSize, fontWeight: normalFontWeight, color: darkColor);
 
@@ -38,11 +53,13 @@ const double xsVerticalSpacing = 4.0;
 const double smVerticalSpacing = 8.0;
 const double mdVerticalSpacing = 16.0;
 const double lgVerticalSpacing = 24.0;
+const double xlVerticalSpacing = 32.0;
 
 const double xsHorizontalSpacing = 4.0;
 const double smHorizontalSpacing = 8.0;
 const double mdHorizontalSpacing = 16.0;
 const double lgHorizontalSpacing = 24.0;
+const double xlHorizontalSpacing = 32.0;
 
 const double defaultGutterSize = 16.0;
 
