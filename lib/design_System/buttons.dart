@@ -63,8 +63,7 @@ class PrimaryButton extends StatelessWidget {
           children: [
             if (iconPosition == IconPosition.left && icon != null)
               Container(
-                alignment:
-                    Alignment.center, // Center the icon within the container
+                alignment: Alignment.center,
                 child: icon,
               ),
             if (icon != null)
@@ -81,8 +80,7 @@ class PrimaryButton extends StatelessWidget {
               SizedBox(width: iconSpacing), // Apply right icon spacing
             if (iconPosition == IconPosition.right && icon != null)
               Container(
-                alignment:
-                    Alignment.center, // Center the icon within the container
+                alignment: Alignment.center,
                 child: icon,
               ),
           ],
@@ -171,8 +169,7 @@ class SecondaryButton extends StatelessWidget {
           children: [
             if (iconPosition == IconPosition.left && icon != null)
               Container(
-                alignment:
-                    Alignment.center, // Center the icon within the container
+                alignment: Alignment.center,
                 child: icon,
               ),
             if (icon != null)
@@ -189,8 +186,7 @@ class SecondaryButton extends StatelessWidget {
               SizedBox(width: iconSpacing), // Apply right icon spacing
             if (iconPosition == IconPosition.right && icon != null)
               Container(
-                alignment:
-                    Alignment.center, // Center the icon within the container
+                alignment: Alignment.center,
                 child: icon,
               ),
           ],
@@ -241,37 +237,94 @@ class PrimaryFloatingActionButton extends StatelessWidget {
   }
 }
 
+// Secondary FloatingActionButton
+class SecondaryFloatingActionButton extends StatelessWidget {
+  final VoidCallback onPressed;
+  final Widget icon;
+  final bool isEnabled;
+
+  const SecondaryFloatingActionButton({
+    required this.onPressed,
+    required this.icon,
+    this.isEnabled = true,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    Color backgroundColor = isEnabled ? whiteColor : whiteColor;
+    VoidCallback? effectiveOnPressed = isEnabled ? onPressed : null;
+    MouseCursor mouseCursor =
+        isEnabled ? SystemMouseCursors.click : SystemMouseCursors.forbidden;
+
+    Color buttonBorderColor = isEnabled ? primaryColor : lightPrimaryColor;
+
+    Color iconColor = isEnabled ? primaryColor : lightPrimaryColor;
+
+    return FloatingActionButton(
+      backgroundColor: backgroundColor,
+      onPressed: effectiveOnPressed,
+      child: IconTheme(
+        data: IconThemeData(color: iconColor), // Set the icon color
+        child: icon,
+      ),
+      elevation: 2.0,
+      highlightElevation: 4.0,
+      mouseCursor: mouseCursor,
+      splashColor: primaryColor,
+      focusElevation: 4.0,
+      hoverElevation: 4.0,
+      focusColor: Colors.transparent,
+      hoverColor: Colors.transparent,
+      disabledElevation: 0,
+      focusNode: FocusNode(canRequestFocus: false),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(28.0),
+        side: BorderSide(
+          width: 2.0,
+          color: buttonBorderColor,
+        ),
+      ),
+    );
+  }
+}
+
 // Text Button
 class CustomTextButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
   final double fontSize;
+  final bool isEnabled;
 
   const CustomTextButton({
-    super.key,
+    Key? key,
     required this.text,
     required this.onPressed,
     this.fontSize = mdFontSize,
-  });
+    this.isEnabled = true, // Default to enabled
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
       style: ButtonStyle(
-        textStyle: MaterialStateProperty.all(
+        textStyle: MaterialStateProperty.all<TextStyle>(
           TextStyle(
             fontSize: fontSize,
             fontFamily: 'Outfit',
           ),
         ),
         overlayColor: MaterialStateProperty.all<Color>(
-          Colors.transparent, // No background on hover
+          lightPrimaryColor.withOpacity(0.15), // Default overlay
         ),
         padding: MaterialStateProperty.all<EdgeInsets>(
-          EdgeInsets.zero, // No padding
+          const EdgeInsets.all(8.0), // Add default padding
+        ),
+        mouseCursor: MaterialStateProperty.all<MouseCursor>(
+          isEnabled ? SystemMouseCursors.click : SystemMouseCursors.forbidden,
         ),
       ),
-      onPressed: onPressed,
+      onPressed:
+          isEnabled ? onPressed : null, // Disable onPressed when not enabled
       child: Text(text),
     );
   }
