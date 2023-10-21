@@ -10,6 +10,8 @@ const Color mediumColor = Color(0xFFABABAB);
 const Color lightColor = Color(0xFFDADADA);
 const Color whiteColor = Color(0xFFFFFFFF);
 const Color dangerColor = Color(0xFFFF4949);
+const Color successColor = Color(0xFF6ADB32);
+const Color warningColor = Color(0xFFFFB144);
 
 // Text
 const TextStyle h1Style = TextStyle(
