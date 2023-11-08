@@ -96,4 +96,5 @@ const InputDecoration textFormFieldDecoration = InputDecoration(
 
 // Container
 // set width auto: width: double.infinity,
+// set width 50%: width: MediaQuery.of(context).size.width * 0.50,
 // set height to 100vh: height: MediaQuery.of(context).size.height,

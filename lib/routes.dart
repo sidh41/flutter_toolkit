@@ -8,15 +8,17 @@ import 'pages/login.dart';
 import 'pages/dashboard.dart';
 import 'pages/example.dart';
 import 'pages/tabs.dart';
+import 'pages/card.dart';
 
 class Routes {
   static final routes = {
-    '/': (context) => ListPage(),
+    '/': (context) => CardPage(),
     '/login': (context) => LoginPage(),
     '/dashboard': (context) => DashboardPage(),
     '/example': (context) => ExamplePage(),
     '/responsive': (context) => ResponsiveGridPage(),
     '/tabs': (context) => TabsPage(),
     '/list': (context) => ListPage(),
+    '/card': (context) => CardPage(),
   };
 }
