@@ -653,6 +653,335 @@ class Style9Card extends StatelessWidget {
   }
 }
 
+class Style10Card extends StatefulWidget {
+  const Style10Card({Key? key}) : super(key: key);
+
+  @override
+  State<Style10Card> createState() => _Style10CardState();
+}
+
+class _Style10CardState extends State<Style10Card> {
+  bool isChecked1 = false;
+  bool isChecked2 = false;
+
+  @override
+  Widget build(BuildContext context) {
+    bootstrapGridParameters(gutterSize: 8.0);
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16.0, 0, 16.0, 0),
+      child: BootstrapRow(children: [
+        BootstrapCol(
+          sizes: 'col-6',
+          child: GestureDetector(
+            onTap: () {
+              setState(() {
+                isChecked1 = !isChecked1; // Toggle the checkbox state
+              });
+            },
+            child: Card(
+              elevation: 3.0,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+                side: BorderSide(
+                  color: isChecked1 ? primaryColor : Colors.transparent,
+                  width: isChecked1 ? 2.0 : 0.0,
+                ),
+              ),
+              child: Column(
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(16),
+                      topRight: Radius.circular(16),
+                    ),
+                    child: Stack(
+                      children: [
+                        Image.network(
+                          'https://cors-anywhere.herokuapp.com/https://via.placeholder.com/150x150',
+                          width: double.infinity,
+                          height: 150,
+                          fit: BoxFit.cover,
+                        ),
+                        Positioned(
+                          top: 8.0,
+                          right: 8.0,
+                          child: Container(
+                            height: 22,
+                            width: 22,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: isChecked1
+                                  ? primaryColor
+                                  : Colors.transparent,
+                            ),
+                            child: Checkbox(
+                              value: isChecked1, // Update the checkbox value
+                              onChanged: (value) {
+                                setState(() {
+                                  isChecked1 =
+                                      value!; // Update the checkbox state
+                                });
+                              },
+                              materialTapTargetSize:
+                                  MaterialTapTargetSize.shrinkWrap,
+                              visualDensity: VisualDensity.standard,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(16)),
+                              checkColor: whiteColor,
+                              activeColor: primaryColor,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Category 1',
+                          style: h2Style,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+        BootstrapCol(
+          sizes: 'col-6',
+          child: GestureDetector(
+            onTap: () {
+              setState(() {
+                isChecked2 = !isChecked2; // Toggle the checkbox state
+              });
+            },
+            child: Card(
+              elevation: 3.0,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+                side: BorderSide(
+                  color: isChecked2 ? primaryColor : Colors.transparent,
+                  width: isChecked2 ? 2.0 : 0.0,
+                ),
+              ),
+              child: Column(
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(16),
+                      topRight: Radius.circular(16),
+                    ),
+                    child: Stack(
+                      children: [
+                        Image.network(
+                          'https://cors-anywhere.herokuapp.com/https://via.placeholder.com/150x150',
+                          width: double.infinity,
+                          height: 150,
+                          fit: BoxFit.cover,
+                        ),
+                        Positioned(
+                          top: 8.0,
+                          right: 8.0,
+                          child: Container(
+                            height: 22,
+                            width: 22,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: isChecked2
+                                  ? primaryColor
+                                  : Colors.transparent,
+                            ),
+                            child: Checkbox(
+                              value: isChecked2, // Update the checkbox value
+                              onChanged: (value) {
+                                setState(() {
+                                  isChecked2 =
+                                      value!; // Update the checkbox state
+                                });
+                              },
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(16)),
+                              materialTapTargetSize:
+                                  MaterialTapTargetSize.shrinkWrap,
+                              visualDensity: VisualDensity.standard,
+                              checkColor: whiteColor,
+                              activeColor: primaryColor,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Category 2',
+                          style: h2Style,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ]),
+    );
+  }
+}
+
+class Style11Card extends StatefulWidget {
+  const Style11Card({Key? key}) : super(key: key);
+
+  @override
+  State<Style11Card> createState() => _Style11CardState();
+}
+
+class _Style11CardState extends State<Style11Card> {
+  int selectedRadio = -1;
+
+  @override
+  Widget build(BuildContext context) {
+    bootstrapGridParameters(gutterSize: 8.0);
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16.0, 0, 16.0, 0),
+      child: BootstrapRow(children: [
+        BootstrapCol(
+          sizes: 'col-6',
+          child: GestureDetector(
+            onTap: () {
+              _onCardTap(0);
+            },
+            child: CardContent(
+              image:
+                  'https://cors-anywhere.herokuapp.com/https://via.placeholder.com/150x150',
+              text: 'Category 1',
+              radioValue: 0,
+              selectedRadio: selectedRadio,
+              onRadioTap: _onCardTap,
+            ),
+          ),
+        ),
+        BootstrapCol(
+          sizes: 'col-6',
+          child: GestureDetector(
+            onTap: () {
+              _onCardTap(1);
+            },
+            child: CardContent(
+              image:
+                  'https://cors-anywhere.herokuapp.com/https://via.placeholder.com/150x150',
+              text: 'Category 2',
+              radioValue: 1,
+              selectedRadio: selectedRadio,
+              onRadioTap: _onCardTap,
+            ),
+          ),
+        ),
+      ]),
+    );
+  }
+
+  void _onCardTap(int value) {
+    setState(() {
+      selectedRadio = selectedRadio == value ? -1 : value;
+    });
+  }
+}
+
+class CardContent extends StatelessWidget {
+  final String image;
+  final String text;
+  final int radioValue;
+  final int selectedRadio;
+  final Function(int) onRadioTap;
+
+  const CardContent({
+    Key? key,
+    required this.image,
+    required this.text,
+    required this.radioValue,
+    required this.selectedRadio,
+    required this.onRadioTap,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 3.0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
+        side: BorderSide(
+          color:
+              selectedRadio == radioValue ? primaryColor : Colors.transparent,
+          width: 2.0,
+        ),
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(16),
+        child: Column(
+          children: [
+            Stack(
+              children: [
+                Image.network(
+                  image,
+                  width: double.infinity,
+                  height: 150,
+                  fit: BoxFit.cover,
+                  alignment: Alignment.center,
+                ),
+                Positioned(
+                  top: 8.0,
+                  right: 8.0,
+                  child: Container(
+                    height: 22,
+                    width: 22,
+                    padding: EdgeInsets.all(0.0),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: selectedRadio == radioValue
+                          ? Colors.transparent
+                          : Colors.transparent,
+                      // color: Colors.black12,
+                    ),
+                    child: Radio<int>(
+                      value: radioValue,
+                      groupValue: selectedRadio,
+                      onChanged: (value) => onRadioTap(value!),
+                      activeColor: primaryColor,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    text,
+                    style: h2Style,
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 class CardPage extends StatelessWidget {
   const CardPage({Key? key}) : super(key: key);
 
@@ -684,6 +1013,10 @@ class CardPage extends StatelessWidget {
                 Style8Card(),
                 const Divider(thickness: 2, height: 30),
                 Style9Card(),
+                const Divider(thickness: 2, height: 30),
+                Style10Card(),
+                const Divider(thickness: 2, height: 30),
+                Style11Card(),
                 SizedBox(height: 30),
               ],
             ),
