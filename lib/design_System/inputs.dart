@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:pinput/pinput.dart';
 import '../Design_System/constants.dart';
 
@@ -17,6 +18,8 @@ class CustomTextFormField extends StatefulWidget {
   final bool showToggleIcon;
   final Color? suffixIconColor; // New parameter for suffix icon color
   final double? suffixIconSize; // New parameter for suffix icon size
+  final TextEditingController? controller;
+  final TextInputType? keyboardType;
 
   const CustomTextFormField({
     Key? key,
@@ -32,6 +35,8 @@ class CustomTextFormField extends StatefulWidget {
     this.showToggleIcon = false,
     this.suffixIconColor, // Add suffixIconColor parameter
     this.suffixIconSize, // Add suffixIconSize parameter
+    this.controller,
+    this.keyboardType,
   }) : super(key: key);
 
   @override
@@ -40,11 +45,14 @@ class CustomTextFormField extends StatefulWidget {
 
 class _CustomTextFormFieldState extends State<CustomTextFormField> {
   late bool _obscureText;
+  late TextEditingController _textEditingController; // Add controller
 
   @override
   void initState() {
     super.initState();
     _obscureText = widget.obscureText;
+    _textEditingController =
+        widget.controller ?? TextEditingController(); // Initialize controller
   }
 
   void _toggleObscureText() {
@@ -67,13 +75,20 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
                 onPressed: _toggleObscureText,
               )
             : null;
+    List<TextInputFormatter> inputFormatters = [];
 
+    if (widget.keyboardType == TextInputType.number) {
+      inputFormatters.add(FilteringTextInputFormatter.digitsOnly);
+    }
     return FocusableActionDetector(
       focusNode: widget.focusNode,
       child: TextFormField(
+        controller: _textEditingController,
         textAlign: widget.textAlign,
         onChanged: widget.onChanged,
         style: TextStyle(fontWeight: normalFontWeight),
+        keyboardType: widget.keyboardType ?? TextInputType.text,
+        inputFormatters: inputFormatters,
         obscureText: _obscureText,
         decoration: InputDecoration(
           hintText: widget.hintText,
