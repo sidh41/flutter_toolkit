@@ -206,16 +206,6 @@ class _LoginFormState extends State<LoginForm> {
                           setState(() {
                             _isPrimaryButtonEnabled = isValidMobileNumber;
                             this.isValidMobileNumber = isValidMobileNumber;
-
-                            // Display an error message if the mobile number is invalid.
-                            // if (!isValidMobileNumber) {
-                            //   // Display an error message here.
-                            //   ScaffoldMessenger.of(context).showSnackBar(
-                            //     SnackBar(
-                            //       content: Text('Invalid mobile number'),
-                            //     ),
-                            //   );
-                            // }
                           });
                         },
                       ),
@@ -358,7 +348,7 @@ class _OTPFormState extends State<OTPForm> {
             height: buttonHeight,
             width: double.infinity,
             child: AbsorbPointer(
-              absorbing: !isOTPValid, //  <----------
+              absorbing: !isOTPValid,
               child: PrimaryButton(
                 text: 'Verify',
                 onPressed: () {
