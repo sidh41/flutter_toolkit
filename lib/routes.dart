@@ -2,6 +2,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter_toolkit/pages/list.dart';
+import 'package:flutter_toolkit/pages/location.dart';
 import 'package:flutter_toolkit/pages/login1.dart';
 import 'package:flutter_toolkit/pages/one.dart';
 import 'package:flutter_toolkit/pages/responsive_grid.dart';
@@ -15,7 +16,7 @@ import 'pages/card.dart';
 
 class Routes {
   static final routes = {
-    '/': (context) => OnePage(),
+    '/': (context) => LocationPage(),
     '/login': (context) => LoginPage(),
     '/dashboard': (context) => DashboardPage(),
     '/example': (context) => ExamplePage(),
@@ -24,6 +25,7 @@ class Routes {
     '/list': (context) => ListPage(),
     '/card': (context) => CardPage(),
     '/login1': (context) => Login1Page(),
+    '/location': (context) => LocationPage(),
     '/one': (context) => OnePage(),
     '/two': (context) => TwoPage(
           countryCode: '',
