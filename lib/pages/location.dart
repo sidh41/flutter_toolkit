@@ -48,10 +48,13 @@
 
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
+import 'package:connectivity_plus/connectivity_plus.dart';
+import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_bootstrap/flutter_bootstrap.dart';
 import 'package:http/http.dart' as http;
+import 'package:flutter_svg/flutter_svg.dart';
 
 class LocationPage extends StatefulWidget {
   const LocationPage({Key? key}) : super(key: key);
@@ -61,16 +64,32 @@ class LocationPage extends StatefulWidget {
 }
 
 class _LocationPageState extends State<LocationPage> {
+  late StreamSubscription<ConnectivityResult> _connectivitySubscription;
   String countryCode = '';
   String country = '';
   String region = '';
   String postal = '';
   String timezone = '';
+  String capital = '';
+  String currency = '';
+  String flag = '';
 
   @override
   void initState() {
     super.initState();
     fetchLocation();
+    _connectivitySubscription = Connectivity()
+        .onConnectivityChanged
+        .listen((ConnectivityResult result) {
+      // Got a new connectivity status, so fetch location again!
+      fetchLocation();
+    });
+  }
+
+  @override
+  void dispose() {
+    _connectivitySubscription.cancel();
+    super.dispose();
   }
 
   Future<void> fetchLocation() async {
@@ -78,18 +97,29 @@ class _LocationPageState extends State<LocationPage> {
     if (response.statusCode == 200) {
       Map<String, dynamic> data = jsonDecode(response.body);
       String countryID = data['country'] ?? '';
-      country = data['country'] ?? '';
       region = data['region'] ?? '';
       postal = data['postal'] ?? '';
       timezone = data['timezone'] ?? '';
-      final dialCodeResponse = await http.get(Uri.parse(
-          'https://gist.githubusercontent.com/anubhavshrimal/75f6183458db8c453306f93521e93d37/raw/f77e7598a8503f1f70528ae1cbf9f66755698a16/CountryCodes.json'));
-      if (dialCodeResponse.statusCode == 200) {
-        List<dynamic> dialCodes = jsonDecode(dialCodeResponse.body);
-        String dialCode = dialCodes.firstWhere(
-            (codeData) => codeData['code'] == countryID)['dial_code'];
+      final countryResponse =
+          await http.get(Uri.parse('assets/json/country.json'));
+      if (countryResponse.statusCode == 200) {
+        List<dynamic> countries = jsonDecode(countryResponse.body);
+        Map<String, dynamic> countryData = countries.firstWhere(
+            (countryData) => countryData['code'] == countryID,
+            orElse: () => {
+                  'name': '',
+                  'code': '',
+                  'dial_code': '',
+                  'flag': '',
+                  'capital': '',
+                  'currency': ''
+                });
         setState(() {
-          countryCode = '$dialCode';
+          countryCode = countryData['dial_code'];
+          country = countryData['name'];
+          capital = countryData['capital'];
+          currency = countryData['currency'];
+          flag = countryData['flag'];
         });
       }
     }
@@ -107,6 +137,9 @@ class _LocationPageState extends State<LocationPage> {
         region: region,
         postal: postal,
         timezone: timezone,
+        capital: capital,
+        currency: currency,
+        flag: flag,
       ),
     );
   }
@@ -118,6 +151,9 @@ class LocationPageLayout extends StatelessWidget {
   final String region;
   final String postal;
   final String timezone;
+  final String capital;
+  final String currency;
+  final String flag;
 
   const LocationPageLayout({
     Key? key,
@@ -126,6 +162,9 @@ class LocationPageLayout extends StatelessWidget {
     required this.region,
     required this.postal,
     required this.timezone,
+    required this.capital,
+    required this.currency,
+    required this.flag,
   }) : super(key: key);
 
   @override
@@ -147,6 +186,9 @@ class LocationPageLayout extends StatelessWidget {
                     Text('State/Region: $region'),
                     Text('Postal: $postal'),
                     Text('Timezone: $timezone'),
+                    Text('Capital: $capital'),
+                    Text('Currency: $currency'),
+                    SvgPicture.network(flag),
                   ],
                 ))
               ],
