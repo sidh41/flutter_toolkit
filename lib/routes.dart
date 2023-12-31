@@ -16,7 +16,7 @@ import 'pages/card.dart';
 
 class Routes {
   static final routes = {
-    '/': (context) => LocationPage(),
+    '/': (context) => ExamplePage(),
     '/login': (context) => LoginPage(),
     '/dashboard': (context) => DashboardPage(),
     '/example': (context) => ExamplePage(),
