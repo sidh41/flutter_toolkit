@@ -44,6 +44,7 @@ dependencies:
   libphonenumber: ^2.0.2
   flutter_svg: ^2.0.9
   connectivity_plus: ^5.0.2
+  sidebarx: ^0.16.3
 
 dev_dependencies:
   flutter_test:

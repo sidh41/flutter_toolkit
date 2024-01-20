@@ -44,7 +44,7 @@ class _LoginPageLayoutState extends State<LoginPageLayout> {
             BootstrapRow(children: [
               BootstrapCol(
                 invisibleForSizes: 'xs',
-                sizes: 'col-12 col-sm-12 col-md-7 col-lg-8 col-xl-9',
+                sizes: 'col-12 col-sm-12 col-md-7 col-lg-8 col-xl-8',
                 child: Container(
                   height: MediaQuery.of(context).size.height *
                       (Responsive.isScreenXS(context)
@@ -55,7 +55,7 @@ class _LoginPageLayoutState extends State<LoginPageLayout> {
                 ),
               ),
               BootstrapCol(
-                sizes: 'col-12 col-sm-12 col-md-5 col-lg-4 col-xl-3',
+                sizes: 'col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4',
                 child: Container(
                   height: MediaQuery.of(context).size.height *
                       (Responsive.isScreenXS(context)
