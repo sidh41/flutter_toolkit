@@ -264,6 +264,14 @@ String _getTitleByIndex(int index) {
       return 'Login';
     case 1:
       return 'Example';
+    case 2:
+      return 'Grid';
+    case 3:
+      return 'Tabs';
+    case 4:
+      return 'List';
+    case 5:
+      return 'Cards';
     // Add more cases for other pages as needed
     default:
       return 'Not found page';
