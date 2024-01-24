@@ -36,6 +36,7 @@ const TextStyle inputLabel = TextStyle(
     fontSize: mdFontSize, fontWeight: normalFontWeight, color: darkColor);
 
 // Font Sizes
+const xxlFontSize = 30.0;
 const xlFontSize = 26.0;
 const lgFontSize = 20.0;
 const mdFontSize = 18.0;
