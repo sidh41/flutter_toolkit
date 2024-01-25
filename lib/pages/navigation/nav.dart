@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_toolkit/design_System/constants.dart';
+import 'package:flutter_toolkit/pages/dashboard.dart';
 import 'nav_home.dart';
 import 'nav_explore.dart';
 import 'nav_profile.dart';
@@ -42,18 +43,22 @@ class _NavState extends State<Nav> {
                   showUnselectedLabels: true, // show labels for all items
                   items: const [
                     BottomNavigationBarItem(
+                      backgroundColor: whiteColor,
                       icon: Icon(Icons.home),
                       label: 'Home',
                     ),
                     BottomNavigationBarItem(
+                      backgroundColor: whiteColor,
                       icon: Icon(Icons.explore),
                       label: 'Explore',
                     ),
                     BottomNavigationBarItem(
+                      backgroundColor: whiteColor,
                       icon: Icon(Icons.person),
                       label: 'Profile',
                     ),
                     BottomNavigationBarItem(
+                      backgroundColor: whiteColor,
                       icon: Icon(Icons.settings),
                       label: 'Settings',
                     ),

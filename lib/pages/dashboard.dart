@@ -5,6 +5,7 @@ import 'package:flutter_toolkit/pages/card.dart';
 import 'package:flutter_toolkit/pages/example.dart';
 import 'package:flutter_toolkit/pages/list.dart';
 import 'package:flutter_toolkit/pages/login.dart';
+import 'package:flutter_toolkit/pages/navigation/nav.dart';
 import 'package:flutter_toolkit/pages/responsive_grid.dart';
 import 'package:flutter_toolkit/pages/tabs.dart';
 import 'package:sidebarx/sidebarx.dart';
@@ -25,7 +26,7 @@ class _DashboardPageState extends State<DashboardPage> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'SidebarX Example',
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: true,
       theme: ThemeData(
         primaryColor: primaryColor,
         fontFamily: 'Outfit',
@@ -187,6 +188,10 @@ class ExampleSidebarX extends StatelessWidget {
           icon: Icons.copy_outlined,
           label: 'Card',
         ),
+        const SidebarXItem(
+          icon: Icons.menu,
+          label: 'Navigation',
+        ),
         // Add more sidebar items as needed
       ],
     );
@@ -245,6 +250,8 @@ class _ScreensExampleState extends State<_ScreensExample> {
         return const ListPage();
       case 5:
         return const CardPage();
+      case 6:
+        return Nav();
       // Add more cases for other pages as needed
       default:
         return Container(
@@ -272,6 +279,8 @@ String _getTitleByIndex(int index) {
       return 'List';
     case 5:
       return 'Cards';
+    case 6:
+      return 'Navigation';
     // Add more cases for other pages as needed
     default:
       return 'Not found page';
