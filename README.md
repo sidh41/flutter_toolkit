@@ -27,3 +27,9 @@ Run the project
 ```bash
   flutter run -d web-server --web-port 8080 --web-hostname 0.0.0.0 --web-renderer canvaskit
 ```
+
+## Screenshots
+
+![Dashboard Nav](https://i.ibb.co/FKzGr3s/Dashboard-Nav.png)
+
+![Dashboard Nav - 1](https://i.ibb.co/TqfydP1/Dashboard-Nav-1.png)
