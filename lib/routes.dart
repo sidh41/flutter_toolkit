@@ -1,6 +1,7 @@
 // import 'package:flutter/material.dart';
 // ignore_for_file: prefer_const_constructors
 
+import 'package:flutter_toolkit/pages/countries.dart';
 import 'package:flutter_toolkit/pages/list.dart';
 import 'package:flutter_toolkit/pages/location.dart';
 import 'package:flutter_toolkit/pages/login1.dart';
@@ -33,5 +34,6 @@ class Routes {
           mobileNumber: '',
         ),
     '/navigation': (context) => Nav(),
+    '/countries': (context) => CountriesPage(),
   };
 }

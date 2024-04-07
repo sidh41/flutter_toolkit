@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_toolkit/design_System/constants.dart';
-import 'routes.dart';
+import 'package:flutter_toolkit/routes/app_route_config.dart';
+
+// import 'routes.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,15 +11,14 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: router,
       title: 'Flutter Toolkit',
       theme: ThemeData(
         primaryColor: darkColor,
         // Set the default font family to Outfit
         fontFamily: 'Outfit',
       ),
-      initialRoute: '/',
-      routes: Routes.routes,
     );
   }
 }

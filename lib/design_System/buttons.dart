@@ -225,14 +225,21 @@ class PrimaryFloatingActionButton extends StatelessWidget {
     MouseCursor mouseCursor = isEnabled
         ? SystemMouseCursors.click
         : SystemMouseCursors.forbidden; // Set mouseCursor based on isEnabled
+    Color iconColor = isEnabled ? whiteColor : whiteColor;
 
     return FloatingActionButton(
       backgroundColor: backgroundColor,
       onPressed: effectiveOnPressed,
-      child: icon,
+      child: IconTheme(
+        data: IconThemeData(color: iconColor), // Set the icon color
+        child: icon,
+      ),
       elevation: 2.0,
       highlightElevation: 4.0,
       mouseCursor: mouseCursor, // Assign mouseCursor based on isEnabled
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(28.0),
+      ),
     );
   }
 }

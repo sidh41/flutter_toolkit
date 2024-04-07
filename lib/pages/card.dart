@@ -1,10 +1,12 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sized_box_for_whitespace
 
+import 'dart:ui';
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bootstrap/flutter_bootstrap.dart';
-
-import '../Design_System/constants.dart';
+import 'package:flutter_toolkit/design_System/constants.dart';
+// import '../Design_System/constants.dart';
 import '../Design_System/buttons.dart';
 
 class Style1Card extends StatelessWidget {
@@ -898,6 +900,180 @@ class _Style11CardState extends State<Style11Card> {
   }
 }
 
+class Style12Card extends StatelessWidget {
+  const Style12Card({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16.0, 0, 16.0, 0),
+      child: Card(
+        elevation: 3.0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(32),
+        ),
+        child: Column(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.all(Radius.circular(32)),
+              child: Stack(
+                children: [
+                  Image.network(
+                    'https://cors-anywhere.herokuapp.com/https://images.pexels.com/photos/41498/pexels-photo-41498.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                    width: double.infinity,
+                    height: 350,
+                    fit: BoxFit.cover,
+                  ),
+                  Positioned(
+                    top: 4,
+                    right: 4,
+                    child: Stack(
+                      children: [
+                        // Background with blur effect
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(
+                              50.0), // Adjust corner radius as needed
+                          child: BackdropFilter(
+                            filter: ImageFilter.blur(
+                                sigmaX: 25.0,
+                                sigmaY: 25.0), // Adjust blur intensity
+                            child: Container(
+                              height: 60.0,
+                              width: 60.0,
+                              color: Colors
+                                  .transparent, // Transparent container for button effect
+                            ),
+                          ),
+                        ),
+
+                        // Centered user icon within IconButton
+                        Center(
+                          child: Container(
+                            width: 60.0,
+                            height: 60.0,
+                            child: IconButton(
+                              onPressed: () {
+                                // Handle button press event
+                              },
+                              icon: Icon(
+                                Icons
+                                    .music_note_rounded, // Replace with your desired user icon
+                                size: 24.0, // Adjust icon size as needed
+                                color:
+                                    Colors.white, // Adjust icon color as needed
+                              ),
+                              padding:
+                                  EdgeInsets.zero, // Remove default padding
+                              visualDensity: VisualDensity
+                                  .compact, // Reduce button hit area (optional)
+                              splashRadius:
+                                  20.0, // Adjust splash radius as needed
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Positioned(
+                    bottom: 16,
+                    left: 8,
+                    right: 8,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.transparent,
+                        borderRadius: BorderRadius.circular(32.0),
+                      ),
+                      child: Column(
+                        children: [
+                          BootstrapRow(
+                            children: [
+                              BootstrapCol(
+                                sizes: 'col-8',
+                                child: Container(
+                                  height: buttonHeight,
+                                  child: PrimaryButton(
+                                    text: 'View Reports',
+                                    icon: Icon(Icons.bar_chart),
+                                    onPressed: () {},
+                                  ),
+                                ),
+                              ),
+                              BootstrapCol(
+                                sizes: 'col-2',
+                                offsets: 'offset-2',
+                                child: Container(
+                                  height: buttonHeight,
+                                  child: SizedBox(
+                                    width: buttonHeight,
+                                    height: buttonHeight,
+                                    child: FittedBox(
+                                      child: PrimaryFloatingActionButton(
+                                        onPressed: () {},
+                                        icon: Icon(
+                                          Icons.add,
+                                          size: xlFontSize,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          // Row(
+                          //   mainAxisAlignment: MainAxisAlignment.center,
+                          //   children: [
+                          //     Icon(
+                          //       Icons.star,
+                          //       color: warningColor,
+                          //       size: 18.0,
+                          //     ),
+                          //     SizedBox(width: 4.0),
+                          //     Text(
+                          //       '4.5',
+                          //       style: h5Style,
+                          //     ),
+                          //   ],
+                          // ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Guitar',
+                          style: h1Style.copyWith(
+                              fontWeight: normalFontWeight,
+                              fontSize: xxxlFontSize),
+                        ),
+                        SizedBox(
+                          width: 0.0,
+                          height: 0.0,
+                        ), // Adjust spacing as needed
+                        Text(
+                          'Assistant',
+                          style: h1Style.copyWith(
+                              fontWeight: normalFontWeight,
+                              fontSize: xxxlFontSize),
+                        ),
+                        SizedBox(width: 16.0),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 class CardContent extends StatelessWidget {
   final String image;
   final String text;
@@ -1017,6 +1193,8 @@ class CardPage extends StatelessWidget {
                 Style10Card(),
                 const Divider(thickness: 2, height: 30),
                 Style11Card(),
+                const Divider(thickness: 2, height: 30),
+                Style12Card(),
                 SizedBox(height: 30),
               ],
             ),
