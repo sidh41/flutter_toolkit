@@ -151,10 +151,10 @@ class SecondaryButton extends StatelessWidget {
             return primaryColor;
           }
           if (states.contains(MaterialState.pressed) && isEnabled) {
-            return darkPrimaryColor.withOpacity(0.25);
+            return darkPrimaryColor;
           }
           if (states.contains(MaterialState.focused) && isEnabled) {
-            return darkPrimaryColor.withOpacity(0.15);
+            return darkPrimaryColor;
           }
           return null;
         }),
@@ -206,7 +206,7 @@ class PrimaryFloatingActionButton extends StatelessWidget {
   final VoidCallback onPressed;
   final Widget icon;
   final Color iconColor;
-  final bool isEnabled; // Add an isEnabled parameter
+  final bool isEnabled;
 
   const PrimaryFloatingActionButton({
     required this.onPressed,
@@ -230,15 +230,15 @@ class PrimaryFloatingActionButton extends StatelessWidget {
     return FloatingActionButton(
       backgroundColor: backgroundColor,
       onPressed: effectiveOnPressed,
-      child: IconTheme(
-        data: IconThemeData(color: iconColor), // Set the icon color
-        child: icon,
-      ),
       elevation: 2.0,
       highlightElevation: 4.0,
       mouseCursor: mouseCursor, // Assign mouseCursor based on isEnabled
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(28.0),
+      ),
+      child: IconTheme(
+        data: IconThemeData(color: iconColor), // Set the icon color
+        child: icon,
       ),
     );
   }
@@ -295,7 +295,6 @@ class SecondaryFloatingActionButton extends StatelessWidget {
   }
 }
 
-// Text Button
 class CustomTextButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
@@ -320,8 +319,13 @@ class CustomTextButton extends StatelessWidget {
             fontFamily: 'Outfit',
           ),
         ),
-        overlayColor: MaterialStateProperty.all<Color>(
-          lightPrimaryColor.withOpacity(0.15), // Default overlay
+        foregroundColor: MaterialStateProperty.resolveWith<Color>(
+          (Set<MaterialState> states) {
+            if (states.contains(MaterialState.disabled)) {
+              return lightPrimaryColor; // Color when disabled
+            }
+            return primaryColor; // Color when enabled
+          },
         ),
         padding: MaterialStateProperty.all<EdgeInsets>(
           const EdgeInsets.all(8.0), // Add default padding

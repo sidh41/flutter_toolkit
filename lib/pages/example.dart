@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, override_on_non_overriding_member
 
 import 'package:flutter/material.dart';
 // import '../Design System/responsive.dart';
@@ -15,15 +15,34 @@ class ExamplePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        foregroundColor: darkColor,
+        surfaceTintColor: primaryColor,
         title: const Text('Examples'),
       ),
-      body: const ExamplePageLayout(),
+      body: ExamplePageLayout(),
     );
   }
 }
 
-class ExamplePageLayout extends StatelessWidget {
-  const ExamplePageLayout({super.key});
+class ExamplePageLayout extends StatefulWidget {
+  ExamplePageLayout({super.key});
+
+  @override
+  State<ExamplePageLayout> createState() => _ExamplePageLayoutState();
+}
+
+bool _obscureText = true;
+
+class _ExamplePageLayoutState extends State<ExamplePageLayout> {
+  final _focusNodeForm = FocusNode();
+  final _focusNodeCustomPassword = FocusNode();
+
+  @override
+  void dispose() {
+    _focusNodeForm.dispose();
+    _focusNodeCustomPassword.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -128,7 +147,7 @@ class ExamplePageLayout extends StatelessWidget {
                       Align(
                         alignment: Alignment.topLeft,
                         child: Text(
-                          'TextFormField',
+                          'CustomTextFormField',
                           style: h2Style,
                         ),
                       ),
@@ -147,7 +166,7 @@ class ExamplePageLayout extends StatelessWidget {
                         ),
                         const SizedBox(height: xsVerticalSpacing),
                         CustomTextFormField(
-                          hintText: 'Placeholder',
+                          hintText: 'Placeholder 123',
                         ),
                         const SizedBox(height: lgVerticalSpacing),
                       ],
@@ -278,8 +297,76 @@ class ExamplePageLayout extends StatelessWidget {
                     children: [
                       Align(
                         alignment: Alignment.topLeft,
+                        child: Text(
+                          'TextField with textFormFieldDecoration',
+                          style: h2Style,
+                        ),
+                      ),
+                      const SizedBox(height: xsVerticalSpacing),
+                    ],
+                  ),
+                ),
+                BootstrapCol(
+                    sizes: 'col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3',
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        TextField(
+                          decoration: textFormFieldDecoration.copyWith(
+                              labelText: 'Additional Field'),
+                          focusNode: _focusNodeForm,
+                        ),
+                        const SizedBox(height: mdVerticalSpacing),
+                      ],
+                    )),
+                BootstrapCol(
+                    sizes: 'col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3',
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        TextField(
+                          decoration: textFormFieldDecoration.copyWith(
+                            labelText: 'Password',
+                            prefixIcon: const Icon(
+                              Icons.lock,
+                              color: lightPrimaryColor,
+                            ),
+                            suffixIcon: IconButton(
+                              icon: Icon(
+                                _obscureText
+                                    ? Icons.visibility_off
+                                    : Icons.visibility,
+                              ),
+                              color: lightPrimaryColor,
+                              onPressed: () {
+                                setState(() {
+                                  _obscureText = !_obscureText;
+                                });
+                              },
+                            ),
+                          ),
+                          focusNode: _focusNodeCustomPassword,
+                          keyboardType: TextInputType
+                              .visiblePassword, // Set keyboard type
+                          obscureText:
+                              _obscureText, // Use obscureText for password masking
+                        ),
+                        const SizedBox(height: mdVerticalSpacing),
+                      ],
+                    )),
+              ],
+            ),
+            BootstrapRow(
+              children: [
+                BootstrapCol(
+                  sizes: 'col-12',
+                  child: Column(
+                    children: [
+                      Align(
+                        alignment: Alignment.topLeft,
                         child: Column(
                           children: [
+                            const SizedBox(height: lgVerticalSpacing),
                             Text(
                               'Buttons (Enabled)',
                               style: h2Style,
@@ -292,7 +379,7 @@ class ExamplePageLayout extends StatelessWidget {
                   ),
                 ),
                 BootstrapCol(
-                    sizes: 'col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3',
+                    sizes: 'col-6 col-sm-6 col-md-4 col-lg-2 col-xl-2',
                     child: Column(
                       children: [
                         Container(
@@ -304,7 +391,7 @@ class ExamplePageLayout extends StatelessWidget {
                       ],
                     )),
                 BootstrapCol(
-                    sizes: 'col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3',
+                    sizes: 'col-6 col-sm-6 col-md-4 col-lg-2 col-xl-2',
                     child: Column(
                       children: [
                         Container(
@@ -316,7 +403,7 @@ class ExamplePageLayout extends StatelessWidget {
                       ],
                     )),
                 BootstrapCol(
-                    sizes: 'col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3',
+                    sizes: 'col-6 col-sm-6 col-md-4 col-lg-2 col-xl-2',
                     child: Column(
                       children: [
                         Container(
@@ -331,7 +418,7 @@ class ExamplePageLayout extends StatelessWidget {
                       ],
                     )),
                 BootstrapCol(
-                    sizes: 'col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3',
+                    sizes: 'col-6 col-sm-6 col-md-4 col-lg-2 col-xl-2',
                     child: Column(
                       children: [
                         Container(
@@ -346,7 +433,7 @@ class ExamplePageLayout extends StatelessWidget {
                       ],
                     )),
                 BootstrapCol(
-                    sizes: 'col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3',
+                    sizes: 'col-6 col-sm-6 col-md-4 col-lg-2 col-xl-2',
                     child: Column(
                       children: [
                         Container(
@@ -362,7 +449,7 @@ class ExamplePageLayout extends StatelessWidget {
                       ],
                     )),
                 BootstrapCol(
-                    sizes: 'col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3',
+                    sizes: 'col-6 col-sm-6 col-md-4 col-lg-2 col-xl-2',
                     child: Column(
                       children: [
                         Container(
@@ -401,7 +488,7 @@ class ExamplePageLayout extends StatelessWidget {
                   ),
                 ),
                 BootstrapCol(
-                    sizes: 'col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3',
+                    sizes: 'col-6 col-sm-6 col-md-4 col-lg-2 col-xl-2',
                     child: Column(
                       children: [
                         Container(
@@ -416,7 +503,7 @@ class ExamplePageLayout extends StatelessWidget {
                       ],
                     )),
                 BootstrapCol(
-                    sizes: 'col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3',
+                    sizes: 'col-6 col-sm-6 col-md-4 col-lg-2 col-xl-2',
                     child: Column(
                       children: [
                         Container(
@@ -431,7 +518,7 @@ class ExamplePageLayout extends StatelessWidget {
                       ],
                     )),
                 BootstrapCol(
-                    sizes: 'col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3',
+                    sizes: 'col-6 col-sm-6 col-md-4 col-lg-2 col-xl-2',
                     child: Column(
                       children: [
                         Container(
@@ -447,7 +534,7 @@ class ExamplePageLayout extends StatelessWidget {
                       ],
                     )),
                 BootstrapCol(
-                    sizes: 'col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3',
+                    sizes: 'col-6 col-sm-6 col-md-4 col-lg-2 col-xl-2',
                     child: Column(
                       children: [
                         Container(
@@ -463,7 +550,7 @@ class ExamplePageLayout extends StatelessWidget {
                       ],
                     )),
                 BootstrapCol(
-                    sizes: 'col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3',
+                    sizes: 'col-6 col-sm-6 col-md-4 col-lg-2 col-xl-2',
                     child: Column(
                       children: [
                         Container(
@@ -480,7 +567,7 @@ class ExamplePageLayout extends StatelessWidget {
                       ],
                     )),
                 BootstrapCol(
-                    sizes: 'col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3',
+                    sizes: 'col-6 col-sm-6 col-md-4 col-lg-2 col-xl-2',
                     child: Column(
                       children: [
                         Container(

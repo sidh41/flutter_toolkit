@@ -15,8 +15,9 @@ class MyApp extends StatelessWidget {
       routerConfig: router,
       title: 'Flutter Toolkit',
       theme: ThemeData(
-        primaryColor: darkColor,
-        // Set the default font family to Outfit
+        scaffoldBackgroundColor: whiteColor,
+        canvasColor: primaryColor,
+        primaryColor: primaryColor,
         fontFamily: 'Outfit',
       ),
     );

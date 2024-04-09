@@ -10,4 +10,5 @@ class AppRouteConstants {
   static const String locationRouteName = 'location';
   static const String navigationRouteName = 'nav';
   static const String countriesRouteName = 'countries';
+  static const String testRouteName = 'test';
 }

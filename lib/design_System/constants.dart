@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 // Colors
 const Color primaryColor = Color(0xFF0575E6);
-const Color lightPrimaryColor = Color(0xFF66BDF7);
+const Color lightPrimaryColor = Color(0xA00576E6);
 const Color darkPrimaryColor = Color(0xFF035AC5);
 
 const Color darkColor = Color(0xFF333333);
@@ -75,16 +75,16 @@ const double buttonHeight = 48.0;
 // TextFormField Style
 const InputDecoration textFormFieldDecoration = InputDecoration(
   enabledBorder: OutlineInputBorder(
-    borderSide: BorderSide(color: mediumColor),
-    borderRadius: BorderRadius.all(Radius.circular(8.0)),
+    borderSide: BorderSide(color: darkColor),
+    borderRadius: BorderRadius.all(Radius.circular(32.0)),
   ),
   focusedBorder: OutlineInputBorder(
     borderSide: BorderSide(color: primaryColor),
-    borderRadius: BorderRadius.all(Radius.circular(8.0)),
+    borderRadius: BorderRadius.all(Radius.circular(32.0)),
   ),
   errorBorder: OutlineInputBorder(
     borderSide: BorderSide(color: Colors.red),
-    borderRadius: BorderRadius.all(Radius.circular(8.0)),
+    borderRadius: BorderRadius.all(Radius.circular(32.0)),
   ),
   contentPadding: EdgeInsets.all(16.0),
   labelStyle: TextStyle(fontSize: mdFontSize, color: darkColor),

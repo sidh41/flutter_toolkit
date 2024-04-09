@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_toolkit/pages/error.dart';
+import 'package:flutter_toolkit/pages/test.dart';
 import 'package:flutter_toolkit/routes/app_route_constants.dart';
 import 'package:go_router/go_router.dart';
 import '../pages/card.dart';
@@ -84,6 +85,11 @@ final GoRouter router = GoRouter(
         name: AppRouteConstants.countriesRouteName,
         path: '/countries',
         pageBuilder: (context, state) => MaterialPage(child: CountriesPage()),
+      ),
+      GoRoute(
+        name: AppRouteConstants.testRouteName,
+        path: '/test',
+        pageBuilder: (context, state) => MaterialPage(child: TestPage()),
       ),
     ],
     errorPageBuilder: (context, state) {
