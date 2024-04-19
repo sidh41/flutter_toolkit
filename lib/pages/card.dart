@@ -5,7 +5,9 @@ import 'dart:ui';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bootstrap/flutter_bootstrap.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:flutter_toolkit/design_System/constants.dart';
+import 'package:flutter_toolkit/pages/dashboard.dart';
 // import '../Design_System/constants.dart';
 import '../Design_System/buttons.dart';
 
@@ -18,6 +20,7 @@ class Style1Card extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 0),
       child: Card(
         elevation: 3.0,
+        color: whiteColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(0),
         ),
@@ -29,10 +32,11 @@ class Style1Card extends StatelessWidget {
                 topRight: Radius.circular(0),
               ),
               child: Image.network(
-                'https://cors-anywhere.herokuapp.com/https://via.placeholder.com/300x150',
+                'assets/images/default.png',
                 width: double.infinity,
                 height: 150,
                 fit: BoxFit.cover,
+                alignment: Alignment.center,
               ),
             ),
             Padding(
@@ -68,6 +72,7 @@ class Style2Card extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(16.0, 0, 16.0, 0),
       child: Card(
         elevation: 3.0,
+        color: whiteColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
         ),
@@ -79,10 +84,11 @@ class Style2Card extends StatelessWidget {
                 topRight: Radius.circular(16),
               ),
               child: Image.network(
-                'https://cors-anywhere.herokuapp.com/https://via.placeholder.com/300x150',
+                'assets/images/default.png',
                 width: double.infinity,
                 height: 150,
                 fit: BoxFit.cover,
+                alignment: Alignment.center,
               ),
             ),
             Padding(
@@ -118,6 +124,7 @@ class Style3Card extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(16.0, 0, 16.0, 0),
       child: Card(
         elevation: 3.0,
+        color: whiteColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
         ),
@@ -128,10 +135,11 @@ class Style3Card extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(8),
                 child: Image.network(
-                  'https://cors-anywhere.herokuapp.com/https://via.placeholder.com/300x150',
+                  'assets/images/default.png',
                   width: double.infinity,
                   height: 150,
                   fit: BoxFit.cover,
+                  alignment: Alignment.center,
                 ),
               ),
             ),
@@ -168,6 +176,7 @@ class Style4Card extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(16.0, 0, 16.0, 0),
       child: Card(
         elevation: 3.0,
+        color: whiteColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
         ),
@@ -179,10 +188,11 @@ class Style4Card extends StatelessWidget {
                 topRight: Radius.circular(16),
               ),
               child: Image.network(
-                'https://cors-anywhere.herokuapp.com/https://via.placeholder.com/300x150',
+                'assets/images/default.png',
                 width: double.infinity,
                 height: 150,
                 fit: BoxFit.cover,
+                alignment: Alignment.center,
               ),
             ),
             Padding(
@@ -225,6 +235,7 @@ class Style5Card extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(16.0, 0, 16.0, 0),
       child: Card(
         elevation: 3.0,
+        color: whiteColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
         ),
@@ -236,10 +247,11 @@ class Style5Card extends StatelessWidget {
                 topRight: Radius.circular(16),
               ),
               child: Image.network(
-                'https://cors-anywhere.herokuapp.com/https://via.placeholder.com/300x150',
+                'assets/images/default.png',
                 width: double.infinity,
                 height: 150,
                 fit: BoxFit.cover,
+                alignment: Alignment.center,
               ),
             ),
             Padding(
@@ -298,6 +310,7 @@ class Style6Card extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(16.0, 0, 16.0, 0),
       child: Card(
         elevation: 3.0,
+        color: whiteColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
         ),
@@ -311,10 +324,11 @@ class Style6Card extends StatelessWidget {
               child: Stack(
                 children: [
                   Image.network(
-                    'https://cors-anywhere.herokuapp.com/https://via.placeholder.com/300x150',
+                    'assets/images/default.png',
                     width: double.infinity,
                     height: 150,
                     fit: BoxFit.cover,
+                    alignment: Alignment.center,
                   ),
                   Positioned(
                     bottom: 8,
@@ -409,6 +423,7 @@ class Style7Card extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(16.0, 0, 16.0, 0),
       child: Card(
         elevation: 3.0,
+        color: whiteColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
         ),
@@ -422,10 +437,11 @@ class Style7Card extends StatelessWidget {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(8),
                     child: Image.network(
-                      'https://cors-anywhere.herokuapp.com/https://via.placeholder.com/80x90',
+                      'assets/images/default.png',
                       width: 80,
                       height: 90,
                       fit: BoxFit.cover,
+                      alignment: Alignment.center,
                     ),
                   ),
                   SizedBox(width: 16.0),
@@ -464,6 +480,7 @@ class Style8Card extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(16.0, 0, 16.0, 0),
       child: Card(
         elevation: 3.0,
+        color: whiteColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
         ),
@@ -479,9 +496,9 @@ class Style8Card extends StatelessWidget {
                         topLeft: Radius.circular(8.0),
                         bottomLeft: Radius.circular(8.0)),
                     child: Image.network(
-                      'https://cors-anywhere.herokuapp.com/https://via.placeholder.com/100x130',
+                      'assets/images/default.png',
                       width: 100,
-                      height: MediaQuery.of(context).size.height * 0.20,
+                      height: MediaQuery.of(context).size.height * 0.25,
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -525,6 +542,7 @@ class Style9Card extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(16.0, 0, 16.0, 0),
       child: Card(
         elevation: 3.0,
+        color: whiteColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
         ),
@@ -549,7 +567,7 @@ class Style9Card extends StatelessWidget {
                         Text(
                           'Appointment Request',
                           style: TextStyle(
-                            color: lightPrimaryColor,
+                            color: lightColor,
                             fontSize: xsFontSize,
                           ),
                         ),
@@ -587,12 +605,10 @@ class Style9Card extends StatelessWidget {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(18.0),
                     child: CachedNetworkImage(
-                      imageUrl:
-                          'https://media.istockphoto.com/id/1329569957/photo/happy-young-female-doctor-looking-at-camera.jpg?s=612x612&w=0&k=20&c=7Wq_Y2cl0T4op6Wg_3DFc-xtZfCqTTDvfaXkPGyrHDM=',
+                      imageUrl: 'assets/images/default.jpg',
                       width: 50,
                       height: 50,
                       fit: BoxFit.cover,
-                      httpHeaders: {'Access-Control-Allow-Origin': '*'},
                       placeholder: (context, url) =>
                           CircularProgressIndicator(),
                       errorWidget: (context, url, error) => Icon(Icons.error),
@@ -682,6 +698,7 @@ class _Style10CardState extends State<Style10Card> {
             },
             child: Card(
               elevation: 3.0,
+              color: whiteColor,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(16),
                 side: BorderSide(
@@ -699,7 +716,7 @@ class _Style10CardState extends State<Style10Card> {
                     child: Stack(
                       children: [
                         Image.network(
-                          'https://cors-anywhere.herokuapp.com/https://via.placeholder.com/150x150',
+                          'assets/images/default.png',
                           width: double.infinity,
                           height: 150,
                           fit: BoxFit.cover,
@@ -764,6 +781,7 @@ class _Style10CardState extends State<Style10Card> {
             },
             child: Card(
               elevation: 3.0,
+              color: whiteColor,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(16),
                 side: BorderSide(
@@ -781,7 +799,7 @@ class _Style10CardState extends State<Style10Card> {
                     child: Stack(
                       children: [
                         Image.network(
-                          'https://cors-anywhere.herokuapp.com/https://via.placeholder.com/150x150',
+                          'assets/images/default.png',
                           width: double.infinity,
                           height: 150,
                           fit: BoxFit.cover,
@@ -864,8 +882,7 @@ class _Style11CardState extends State<Style11Card> {
               _onCardTap(0);
             },
             child: CardContent(
-              image:
-                  'https://cors-anywhere.herokuapp.com/https://via.placeholder.com/150x150',
+              image: 'assets/images/default.png',
               text: 'Category 1',
               radioValue: 0,
               selectedRadio: selectedRadio,
@@ -880,8 +897,7 @@ class _Style11CardState extends State<Style11Card> {
               _onCardTap(1);
             },
             child: CardContent(
-              image:
-                  'https://cors-anywhere.herokuapp.com/https://via.placeholder.com/150x150',
+              image: 'assets/images/default.png',
               text: 'Category 2',
               radioValue: 1,
               selectedRadio: selectedRadio,
@@ -909,6 +925,7 @@ class Style12Card extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(16.0, 0, 16.0, 0),
       child: Card(
         elevation: 3.0,
+        color: whiteColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(32),
         ),
@@ -919,7 +936,7 @@ class Style12Card extends StatelessWidget {
               child: Stack(
                 children: [
                   Image.network(
-                    'https://cors-anywhere.herokuapp.com/https://images.pexels.com/photos/41498/pexels-photo-41498.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                    'assets/images/default.jpg',
                     width: double.infinity,
                     height: 350,
                     fit: BoxFit.cover,
@@ -1048,7 +1065,8 @@ class Style12Card extends StatelessWidget {
                           'Guitar',
                           style: h1Style.copyWith(
                               fontWeight: normalFontWeight,
-                              fontSize: xxxlFontSize),
+                              fontSize: xxxlFontSize,
+                              color: whiteColor),
                         ),
                         SizedBox(
                           width: 0.0,
@@ -1058,7 +1076,8 @@ class Style12Card extends StatelessWidget {
                           'Assistant',
                           style: h1Style.copyWith(
                               fontWeight: normalFontWeight,
-                              fontSize: xxxlFontSize),
+                              fontSize: xxxlFontSize,
+                              color: whiteColor),
                         ),
                         SizedBox(width: 16.0),
                       ],
@@ -1094,6 +1113,7 @@ class CardContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 3.0,
+      color: whiteColor,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16),
         side: BorderSide(
