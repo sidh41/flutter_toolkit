@@ -17,7 +17,7 @@ class Style1Card extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 0),
+      padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0),
       child: Card(
         elevation: 3.0,
         color: whiteColor,
@@ -69,7 +69,7 @@ class Style2Card extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(16.0, 0, 16.0, 0),
+      padding: const EdgeInsets.fromLTRB(0.0, 0, 0.0, 0),
       child: Card(
         elevation: 3.0,
         color: whiteColor,
@@ -121,7 +121,7 @@ class Style3Card extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(16.0, 0, 16.0, 0),
+      padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
       child: Card(
         elevation: 3.0,
         color: whiteColor,
@@ -173,7 +173,7 @@ class Style4Card extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(16.0, 0, 16.0, 0),
+      padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
       child: Card(
         elevation: 3.0,
         color: whiteColor,
@@ -232,7 +232,7 @@ class Style5Card extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(16.0, 0, 16.0, 0),
+      padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
       child: Card(
         elevation: 3.0,
         color: whiteColor,
@@ -260,7 +260,7 @@ class Style5Card extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Card Title',
+                    'Card 5 Title',
                     style: h2Style,
                   ),
                   SizedBox(height: 8),
@@ -269,28 +269,30 @@ class Style5Card extends StatelessWidget {
                     style: TextStyle(fontSize: 16),
                   ),
                   SizedBox(height: 16),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  BootstrapRow(
                     children: [
-                      Container(
-                        height: buttonHeight,
-                        width: MediaQuery.of(context).size.width * 0.38,
-                        child: SecondaryButton(
-                          text: 'Secondary',
-                          onPressed: () {},
+                      BootstrapCol(
+                        sizes: 'col-6',
+                        child: Container(
+                          height: buttonHeight,
+                          child: SecondaryButton(
+                            text: 'Secondary',
+                            onPressed: () {},
+                          ),
                         ),
                       ),
-                      SizedBox(width: mdHorizontalSpacing),
-                      Container(
-                        height: buttonHeight,
-                        width: MediaQuery.of(context).size.width * 0.38,
-                        child: PrimaryButton(
-                          text: 'Primary',
-                          onPressed: () {},
+                      BootstrapCol(
+                        sizes: 'col-6',
+                        child: Container(
+                          height: buttonHeight,
+                          child: PrimaryButton(
+                            text: 'Primary',
+                            onPressed: () {},
+                          ),
                         ),
-                      )
+                      ),
                     ],
-                  ),
+                  )
                 ],
               ),
             ),
@@ -307,7 +309,7 @@ class Style6Card extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(16.0, 0, 16.0, 0),
+      padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
       child: Card(
         elevation: 3.0,
         color: whiteColor,
@@ -373,7 +375,7 @@ class Style6Card extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Card Title',
+                    'Card 6 Title',
                     style: h2Style,
                   ),
                   SizedBox(height: 8),
@@ -382,28 +384,30 @@ class Style6Card extends StatelessWidget {
                     style: TextStyle(fontSize: 16),
                   ),
                   SizedBox(height: 16),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  BootstrapRow(
                     children: [
-                      Container(
-                        height: buttonHeight,
-                        width: MediaQuery.of(context).size.width * 0.38,
-                        child: SecondaryButton(
-                          text: 'Secondary',
-                          onPressed: () {},
+                      BootstrapCol(
+                        sizes: 'col-6',
+                        child: Container(
+                          height: buttonHeight,
+                          child: SecondaryButton(
+                            text: 'Secondary',
+                            onPressed: () {},
+                          ),
                         ),
                       ),
-                      SizedBox(width: mdHorizontalSpacing),
-                      Container(
-                        height: buttonHeight,
-                        width: MediaQuery.of(context).size.width * 0.38,
-                        child: PrimaryButton(
-                          text: 'Primary',
-                          onPressed: () {},
+                      BootstrapCol(
+                        sizes: 'col-6',
+                        child: Container(
+                          height: buttonHeight,
+                          child: PrimaryButton(
+                            text: 'Primary',
+                            onPressed: () {},
+                          ),
                         ),
                       ),
                     ],
-                  ),
+                  )
                 ],
               ),
             ),
@@ -420,7 +424,7 @@ class Style7Card extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(16.0, 0, 16.0, 0),
+      padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
       child: Card(
         elevation: 3.0,
         color: whiteColor,
@@ -477,7 +481,7 @@ class Style8Card extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(16.0, 0, 16.0, 0),
+      padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
       child: Card(
         elevation: 3.0,
         color: whiteColor,
@@ -511,7 +515,7 @@ class Style8Card extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            'Card Title',
+                            'Card 8 Title',
                             style: h2Style,
                           ),
                           SizedBox(height: 8),
@@ -539,7 +543,7 @@ class Style9Card extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(16.0, 0, 16.0, 0),
+      padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
       child: Card(
         elevation: 3.0,
         color: whiteColor,
@@ -639,28 +643,30 @@ class Style9Card extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  BootstrapRow(
                     children: [
-                      Container(
-                        height: buttonHeight,
-                        width: MediaQuery.of(context).size.width * 0.38,
-                        child: SecondaryButton(
-                          text: 'Decline',
-                          onPressed: () {},
+                      BootstrapCol(
+                        sizes: 'col-6',
+                        child: Container(
+                          height: buttonHeight,
+                          child: SecondaryButton(
+                            text: 'Decline',
+                            onPressed: () {},
+                          ),
                         ),
                       ),
-                      SizedBox(width: mdHorizontalSpacing),
-                      Container(
-                        height: buttonHeight,
-                        width: MediaQuery.of(context).size.width * 0.38,
-                        child: PrimaryButton(
-                          text: 'Accept',
-                          onPressed: () {},
+                      BootstrapCol(
+                        sizes: 'col-6',
+                        child: Container(
+                          height: buttonHeight,
+                          child: PrimaryButton(
+                            text: 'Accept',
+                            onPressed: () {},
+                          ),
                         ),
-                      )
+                      ),
                     ],
-                  ),
+                  )
                 ],
               ),
             ),
@@ -686,7 +692,7 @@ class _Style10CardState extends State<Style10Card> {
   Widget build(BuildContext context) {
     bootstrapGridParameters(gutterSize: 8.0);
     return Padding(
-      padding: const EdgeInsets.fromLTRB(16.0, 0, 16.0, 0),
+      padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
       child: BootstrapRow(children: [
         BootstrapCol(
           sizes: 'col-6',
@@ -873,7 +879,7 @@ class _Style11CardState extends State<Style11Card> {
   Widget build(BuildContext context) {
     bootstrapGridParameters(gutterSize: 8.0);
     return Padding(
-      padding: const EdgeInsets.fromLTRB(16.0, 0, 16.0, 0),
+      padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
       child: BootstrapRow(children: [
         BootstrapCol(
           sizes: 'col-6',
@@ -922,7 +928,7 @@ class Style12Card extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(16.0, 0, 16.0, 0),
+      padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
       child: Card(
         elevation: 3.0,
         color: whiteColor,
@@ -1189,33 +1195,157 @@ class CardPage extends StatelessWidget {
       ),
       body: Scrollable(
         viewportBuilder: (context, viewportConstraints) {
+          bootstrapGridParameters(gutterSize: 8.0);
           return SingleChildScrollView(
-            child: Column(
+            child: BootstrapContainer(
+              fluid: true,
+              padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
               children: [
-                Style1Card(),
-                const Divider(thickness: 2, height: 30),
-                Style2Card(),
-                const Divider(thickness: 2, height: 30),
-                Style3Card(),
-                const Divider(thickness: 2, height: 30),
-                Style4Card(),
-                const Divider(thickness: 2, height: 30),
-                Style5Card(),
-                const Divider(thickness: 2, height: 30),
-                Style6Card(),
-                const Divider(thickness: 2, height: 30),
-                Style7Card(),
-                const Divider(thickness: 2, height: 30),
-                Style8Card(),
-                const Divider(thickness: 2, height: 30),
-                Style9Card(),
-                const Divider(thickness: 2, height: 30),
-                Style10Card(),
-                const Divider(thickness: 2, height: 30),
-                Style11Card(),
-                const Divider(thickness: 2, height: 30),
-                Style12Card(),
-                SizedBox(height: 30),
+                BootstrapRow(children: [
+                  BootstrapCol(
+                      sizes: 'col-12 col-sm-8 col-md-4 col-lg-4',
+                      offsets: 'offset-0 offset-sm-2 offset-md-4 offset-lg-4',
+                      child: Column(
+                        children: [
+                          BootstrapRow(
+                            children: [
+                              BootstrapCol(
+                                sizes: 'col-12',
+                                child: Column(
+                                  children: [
+                                    Style1Card(),
+                                    SizedBox(
+                                      height: smVerticalSpacing,
+                                    )
+                                  ],
+                                ),
+                              ),
+                              BootstrapCol(
+                                sizes: 'col-12',
+                                child: Column(
+                                  children: [
+                                    Style2Card(),
+                                    SizedBox(
+                                      height: smVerticalSpacing,
+                                    )
+                                  ],
+                                ),
+                              ),
+                              BootstrapCol(
+                                sizes: 'col-12',
+                                child: Column(
+                                  children: [
+                                    Style3Card(),
+                                    SizedBox(
+                                      height: smVerticalSpacing,
+                                    )
+                                  ],
+                                ),
+                              ),
+                              BootstrapCol(
+                                sizes: 'col-12',
+                                child: Column(
+                                  children: [
+                                    Style4Card(),
+                                    SizedBox(
+                                      height: smVerticalSpacing,
+                                    )
+                                  ],
+                                ),
+                              ),
+                              BootstrapCol(
+                                sizes: 'col-12',
+                                child: Column(
+                                  children: [
+                                    Style5Card(),
+                                    SizedBox(
+                                      height: smVerticalSpacing,
+                                    )
+                                  ],
+                                ),
+                              ),
+                              BootstrapCol(
+                                sizes: 'col-12',
+                                child: Column(
+                                  children: [
+                                    Style6Card(),
+                                    SizedBox(
+                                      height: smVerticalSpacing,
+                                    )
+                                  ],
+                                ),
+                              ),
+                              BootstrapCol(
+                                sizes: 'col-12',
+                                child: Column(
+                                  children: [
+                                    Style7Card(),
+                                    SizedBox(
+                                      height: smVerticalSpacing,
+                                    )
+                                  ],
+                                ),
+                              ),
+                              BootstrapCol(
+                                sizes: 'col-12',
+                                child: Column(
+                                  children: [
+                                    Style8Card(),
+                                    SizedBox(
+                                      height: smVerticalSpacing,
+                                    )
+                                  ],
+                                ),
+                              ),
+                              BootstrapCol(
+                                sizes: 'col-12',
+                                child: Column(
+                                  children: [
+                                    Style9Card(),
+                                    SizedBox(
+                                      height: smVerticalSpacing,
+                                    )
+                                  ],
+                                ),
+                              ),
+                              BootstrapCol(
+                                sizes: 'col-12',
+                                child: Column(
+                                  children: [
+                                    Style10Card(),
+                                    SizedBox(
+                                      height: smVerticalSpacing,
+                                    )
+                                  ],
+                                ),
+                              ),
+                              BootstrapCol(
+                                sizes: 'col-12',
+                                child: Column(
+                                  children: [
+                                    Style11Card(),
+                                    SizedBox(
+                                      height: smVerticalSpacing,
+                                    )
+                                  ],
+                                ),
+                              ),
+                              BootstrapCol(
+                                sizes: 'col-12',
+                                child: Column(
+                                  children: [
+                                    Style12Card(),
+                                    SizedBox(
+                                      height: smVerticalSpacing,
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      )),
+                ]),
               ],
             ),
           );
