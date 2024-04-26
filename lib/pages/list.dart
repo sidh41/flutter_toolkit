@@ -33,9 +33,10 @@ class Style2List extends StatelessWidget {
       itemBuilder: (context, index) {
         return ListTile(
           leading: CachedNetworkImage(
-            imageUrl:
-                'https://cors-anywhere.herokuapp.com/https://via.placeholder.com/40x40',
-            httpHeaders: {'Access-Control-Allow-Origin': '*'},
+            imageUrl: 'assets/images/default.jpg',
+            width: 50,
+            height: 50,
+            fit: BoxFit.cover,
             placeholder: (context, url) => CircularProgressIndicator(),
             errorWidget: (context, url, error) => Icon(Icons.error),
           ),
@@ -69,9 +70,10 @@ class Style3List extends StatelessWidget {
             ),
             child: ListTile(
               leading: CachedNetworkImage(
-                imageUrl:
-                    'https://cors-anywhere.herokuapp.com/https://via.placeholder.com/40x40',
-                httpHeaders: {'Access-Control-Allow-Origin': '*'},
+                imageUrl: 'assets/images/default.jpg',
+                width: 50,
+                height: 50,
+                fit: BoxFit.cover,
                 placeholder: (context, url) => CircularProgressIndicator(),
                 errorWidget: (context, url, error) => Icon(Icons.error),
               ),
@@ -112,11 +114,11 @@ class Style4List extends StatelessWidget {
                 Container(
                   height: 72.0,
                   width: 54.0,
-                  decoration: BoxDecoration(color: darkColor),
+                  decoration: BoxDecoration(color: primaryColor),
                   child: Center(
                     child: CircleAvatar(
                       backgroundImage: CachedNetworkImageProvider(
-                        'https://cors-anywhere.herokuapp.com/https://via.placeholder.com/50x50',
+                        'assets/images/default.jpg',
                         headers: {'Access-Control-Allow-Origin': '*'},
                       ),
                     ),
@@ -207,9 +209,10 @@ class Style6List extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(50.0),
                 child: CachedNetworkImage(
-                  imageUrl:
-                      'https://cors-anywhere.herokuapp.com/https://i.pravatar.cc/40?u=$index',
-                  httpHeaders: {'Access-Control-Allow-Origin': '*'},
+                  imageUrl: 'assets/images/default.jpg',
+                  width: 50,
+                  height: 50,
+                  fit: BoxFit.cover,
                   placeholder: (context, url) => CircularProgressIndicator(),
                   errorWidget: (context, url, error) => Icon(Icons.error),
                 ),
@@ -268,9 +271,10 @@ class _Style7ListState extends State<Style7List> {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(50.0),
                   child: CachedNetworkImage(
-                    imageUrl:
-                        'https://cors-anywhere.herokuapp.com/https://i.pravatar.cc/40?u=$index',
-                    httpHeaders: {'Access-Control-Allow-Origin': '*'},
+                    imageUrl: 'assets/images/default.jpg',
+                    width: 50,
+                    height: 50,
+                    fit: BoxFit.cover,
                     placeholder: (context, url) => CircularProgressIndicator(),
                     errorWidget: (context, url, error) => Icon(Icons.error),
                   ),
@@ -344,9 +348,10 @@ class _Style8ListState extends State<Style8List> {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(50.0),
                   child: CachedNetworkImage(
-                    imageUrl:
-                        'https://cors-anywhere.herokuapp.com/https://i.pravatar.cc/40?u=$index',
-                    httpHeaders: {'Access-Control-Allow-Origin': '*'},
+                    imageUrl: 'assets/images/default.jpg',
+                    width: 50,
+                    height: 50,
+                    fit: BoxFit.cover,
                     placeholder: (context, url) => CircularProgressIndicator(),
                     errorWidget: (context, url, error) => Icon(Icons.error),
                   ),
@@ -409,11 +414,10 @@ class Style9List extends StatelessWidget {
               leading: ClipRRect(
                 borderRadius: BorderRadius.circular(50.0),
                 child: CachedNetworkImage(
-                  imageUrl:
-                      'https://cors-anywhere.herokuapp.com/https://i.pravatar.cc/40?u=$index',
-                  httpHeaders: {'Access-Control-Allow-Origin': '*'},
-                  width: 48, // Set a fixed width for the image
-                  height: 48, // Set a fixed height for the image
+                  imageUrl: 'assets/images/default.jpg',
+                  width: 50,
+                  height: 50,
+                  fit: BoxFit.cover,
                   placeholder: (context, url) => CircularProgressIndicator(),
                   errorWidget: (context, url, error) => Icon(Icons.error),
                 ),
@@ -450,9 +454,10 @@ class Style10List extends StatelessWidget {
               leading: ClipRRect(
                 borderRadius: BorderRadius.circular(50.0),
                 child: CachedNetworkImage(
-                  imageUrl:
-                      'https://cors-anywhere.herokuapp.com/https://i.pravatar.cc/40?u=$index',
-                  httpHeaders: {'Access-Control-Allow-Origin': '*'},
+                  imageUrl: 'assets/images/default.jpg',
+                  width: 50,
+                  height: 50,
+                  fit: BoxFit.cover,
                   placeholder: (context, url) => CircularProgressIndicator(),
                   errorWidget: (context, url, error) => Icon(Icons.error),
                 ),
@@ -508,9 +513,10 @@ class Style11List extends StatelessWidget {
             leading: ClipRRect(
               borderRadius: BorderRadius.circular(50.0),
               child: CachedNetworkImage(
-                imageUrl:
-                    'https://cors-anywhere.herokuapp.com/https://i.pravatar.cc/40?u=$index',
-                httpHeaders: {'Access-Control-Allow-Origin': '*'},
+                imageUrl: 'assets/images/default.jpg',
+                width: 50,
+                height: 50,
+                fit: BoxFit.cover,
                 placeholder: (context, url) => CircularProgressIndicator(),
                 errorWidget: (context, url, error) => Icon(Icons.error),
               ),
@@ -601,8 +607,10 @@ class _Style12ListState extends State<Style12List> {
             leading: ClipRRect(
               borderRadius: BorderRadius.circular(50.0),
               child: CachedNetworkImage(
-                imageUrl:
-                    'https://cors-anywhere.herokuapp.com/https://i.pravatar.cc/40?u=$index',
+                imageUrl: 'assets/images/default.jpg',
+                width: 50,
+                height: 50,
+                fit: BoxFit.cover,
                 placeholder: (context, url) => CircularProgressIndicator(),
                 errorWidget: (context, url, error) => Icon(Icons.error),
               ),
