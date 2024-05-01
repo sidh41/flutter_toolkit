@@ -1203,8 +1203,8 @@ class CardPage extends StatelessWidget {
               children: [
                 BootstrapRow(children: [
                   BootstrapCol(
-                      sizes: 'col-12 col-sm-8 col-md-4 col-lg-4',
-                      offsets: 'offset-0 offset-sm-2 offset-md-4 offset-lg-4',
+                      sizes: 'col-12 col-sm-10 col-md-6 col-lg-4',
+                      offsets: 'offset-0 offset-sm-1 offset-md-3 offset-lg-4',
                       child: Column(
                         children: [
                           BootstrapRow(
